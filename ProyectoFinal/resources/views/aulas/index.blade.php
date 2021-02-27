@@ -21,7 +21,7 @@
                             <th>Codigo</th>
                             <th>Piso</th>
                             <th>Editar</th>
-                            <th>Eliminar</th>
+                            <th>Remover</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -29,7 +29,9 @@
                             <tr>
                                 <td>{{$ambiente->codigo}}</td>
                                 <td>{{$ambiente->piso}}</td>
-                                <td>Lapiz</td>
+                                <td>
+                                    <a href="{{route('aulas.edit',$ambiente->id)}}">Lapiz</a>
+                                </td>
                                 <td>X</td>
                             </tr>
                         @endforeach

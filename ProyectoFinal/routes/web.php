@@ -47,6 +47,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::put('aulas{id}',[AmbientesController::class,'update'])->name('aulas.update');
 
     Route::get('categorias',[activosController::class,'categorias'])->name('categorias.index');
+
+    Route::get('reportes',[activosController::class,'reportes'])->name('reportes.index');
 });
 
 

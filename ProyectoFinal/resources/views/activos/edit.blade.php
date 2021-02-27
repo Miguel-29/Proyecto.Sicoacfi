@@ -7,7 +7,7 @@
         <div class="row">
             <div class="card text-center">
                 <div class="card-header">
-                    <h4>Registrar activos fijos</h4>
+                    <h4>Editar activos fijos</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">

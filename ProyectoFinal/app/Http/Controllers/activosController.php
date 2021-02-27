@@ -27,7 +27,8 @@ class activosController extends Controller
     }
     public function store(Request $request) {
         $activos = activos::create($request->all());
-        return redirect()->route('activos.index');
+        return redirect()->route('activos.index')
+        ->with('success','Activo fijo registrado con exito');;
     }
     public function edit($id) {
         $activos=activos::find($id);
@@ -37,7 +38,8 @@ class activosController extends Controller
     }
     public function update(Request $request,$id) {
         $activos=activos::find($id)->update($request->all());
-        return redirect()->route('activos.index');
+        return redirect()->route('activos.index')
+        ->with('success','Activo fijo actualizado con exito');;
     }
     public function categorias() {
         $activos = activos::all();

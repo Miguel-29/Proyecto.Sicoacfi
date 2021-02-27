@@ -27,7 +27,7 @@
                                     <option value="piso 5">Piso 5</option>
                                     <option value="piso 6">Piso 6</option>
                                 </select>
-                                <label for="floatingSelect">Seleccione profesor</label>
+                                <label for="floatingSelect">Seleccione el piso</label>
                             </div>
                         </div>
                     </div>

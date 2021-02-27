@@ -33,7 +33,9 @@
                                 <td>{{$profesor->apellido}}</td>
                                 <td>{{$profesor->licenciatura}}</td>
                                 <td>{{$profesor->documento}}</td>
-                                <td>Lapiz</td>
+                                <td>
+                                    <a href="{{route('profesores.edit',$profesor->id)}}">Lapiz</a>   
+                                </td>
                                 <td>X</td>
                             </tr>
                             @endforeach
