@@ -8,12 +8,6 @@
             <div class="card text-center">
                 <div class="card-header">
                     <h4>Lista de activos fijos</h4>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
-                          Indeterminate checkbox
-                        </label>
-                    </div>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive-xxl">
