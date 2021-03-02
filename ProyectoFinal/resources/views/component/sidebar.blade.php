@@ -50,7 +50,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('reportes.index')}}">
                     <span>
                         <i class="btn far fa-clipboard" style="width: 45px" ></i>
                     </span>

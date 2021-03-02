@@ -20,5 +20,7 @@ class activos extends Model
         'categoria',
         'idAula',
         'idProfesor',
+        'created_at',
+        'updated_at'
     ];
 }
