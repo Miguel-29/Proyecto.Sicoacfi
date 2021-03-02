@@ -11,4 +11,7 @@ class reporteController extends Controller
         $pdf = \PDF::loadView('reportes.activosFecha');    
         return $pdf->download('archivo.pdf');
     }
+    public function index() {
+        return view('reportes.index');
+    }
 }

@@ -49,9 +49,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
 
     Route::get('categorias',[activosController::class,'categorias'])->name('categorias.index');
 
+    Route::get('reportes',[reporteController::class,'index'])->name('reportes.index');
 });
 
-Route::get('reportes',[reporteController::class,'download'])->name('reportes.index');
 
 
 
