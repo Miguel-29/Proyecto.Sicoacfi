@@ -11,20 +11,24 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .js('resources/template/js/bootstrap.js','public/js')
-    .js('resources/template/js/dashboard.js','public/js')
-    .js('resources/template/js/feather.js','public/js')
-    .js('resources/template/js/Chart.min.js','public/js')
-    .css('resources/template/css/bootstrap.min.css', 'public/css')
-    .css('resources/template/css/dashboard.css','public/css')
-    .postCss('resources/css/app.css', 'public/css', [
-        require('postcss-import'),
-        require('tailwindcss'),
-        require('autoprefixer'),
-    ]);
+// mix.js('resources/js/app.js', 'public/js')
+//     .js(,'public/js')
+//     .js('resources/template/js/Chart.min.js','public/js')
+//     .js('resources/template/js/dashboard.js','public/js')
+//     .js('resources/template/js/feather.js','public/js')
+//     .css('resources/template/css/bootstrap.min.css', 'public/css')
+//     .css('resources/template/css/dashboard.css','public/css')
+//     .css('resources/template/css/fontawesome.css','public/css')
+    
+mix.scripts([
+        'resources/Template/js/bootstrap.js',
+        'resources/Template/js/Chart.min.j',
+        'resources/Template/js/dashboard.js',
+        'resources/Template/js/feather.js',
+    ],'public/js/app.js')
 
-
-if (mix.inProduction()) {
-    mix.version();
-}
+    .styles([
+        'resources/Template/css/bootstrap.min.css',
+        'resources/Template/css/dashboard.css',
+        'resources/Template/css/fontawesome.css'
+    ],'public/css/app.css');

@@ -8,12 +8,10 @@
     <meta name="Miguel Romero" content="manejo de activos fijos">
     <meta name="generator" content="">
     <title>@yield('title')</title>
-    <link rel="shortcut icon" type="image/png" href="/images/LogoMakr-1lXjxx.png"></link>
-
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link rel="shortcut icon" type="image/png" href="/images/LogoMakr-1lXjxx.png"/>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}" >
+    <link rel="stylesheet" href="{{url('css/app.css')}}" />
 
 
     <style>
@@ -31,10 +29,6 @@
             }
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="{{url('css/dashboard.css')}}" rel="stylesheet">
 </head>
 <body>
 @include('component.navbar')
@@ -54,11 +48,7 @@
 
 
 
-<script src="{{ url('js/bootstrap.js')}}"></script>
-
-<script src="{{url('js/feather.js')}}"></script>
-
-<script src="{{url('js/Chart.min.js')}}"></script>
+<script src="{{ url('js/app.js')}}"></script>
 
 {{--<script src="{{url('js/dashboard.js')}}"></script>--}}
 </body>

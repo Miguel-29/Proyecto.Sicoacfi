@@ -8,19 +8,19 @@
             <div class="card-header">
                 <h5>Generar reporte de activos fijos</h5>
             </div>
-            <div class="card-body py-3">
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="inicioActivo" name="inicioActivo" placeholder="fechaIngreso" required>
-                    <label for="fechaIngreso">Fecha inicial</label>
+            <form class="form-inline" action="{{route('reportes.descarga')}}" method="get">
+                <div class="card-body py-3">
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="Fecha" name="Fecha" placeholder="Fecha inicial" required>
+                        <label for="Fecha">Fecha inicial</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="Fechados" name="Fechados" placeholder="Fecha final" required>
+                        <label for="Fechados">Fecha final</label>
+                    </div>
+                    <button class="btn btn-success w-100" type="submit">Buscar</button>
                 </div>
-                <div class="form-floating mb-3">
-                    <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
-                    <label for="fechaIngreso">Fecha final</label>
-                </div>
-            </div>
-            <div class="card-footer">
-                <a href="#" class="btn btn-primary">Generar reporte</a>
-            </div>    
+            </form>
         </div>
         <div class="card col-sm-4 my-3">
             <form action="">
