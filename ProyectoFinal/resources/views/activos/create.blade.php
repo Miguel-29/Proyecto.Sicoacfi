@@ -14,54 +14,54 @@
                         <form action="{{route('activos.store')}}" method="post" class="offset-lg-3 col-lg-6">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="marca" name="marca" placeholder="Marca" autofocus required>
-                                <label for="marca">Marca</label>
+                                <input type="text" class="form-control" id="trademark" name="trademark" placeholder="Marca" autofocus required>
+                                <label for="trademark">Marca</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="numeroSerial" name="numeroSerial" placeholder="serial" required>
-                                <label for="serial">Numero de serial</label>
+                                <input type="number" class="form-control" id="serial_number" name="serial_number" placeholder="serial" required>
+                                <label for="serial_number">Numero de serial</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="referencia" name="referencia" placeholder="referencia" required>
-                                <label for="referencia">Referencia</label>
+                                <input type="text" class="form-control" id="reference" name="reference" placeholder="referencia" required>
+                                <label for="reference">Referencia</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
-                                <label for="fechaIngreso">Fecha de ingreso</label>
+                                <input type="date" class="form-control" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" required>
+                                <label for="date_admission">Fecha de ingreso</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="mantenimiento" name="mantenimiento" placeholder="mantenimiento">
-                                <label for="mantenimiento">Fecha de mantenimiento</label>
+                                <input type="date" class="form-control" id="maintenance" name="maintenance" placeholder="mantenimiento">
+                                <label for="maintenance">Fecha de mantenimiento</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="color" name="color" placeholder="color">
                                 <label for="color">Color</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="categoria" name="categoria" aria-label="Floating label select example" required>
+                                <select class="form-select" id="category" name="category" aria-label="Floating label select" required>
                                     <option selected>Categorias</option>
-                                    <option value="Tecnologia">Tecnologia</option>
-                                    <option value="Muebles">Muebles</option>
+                                    <option value="technology">Tecnologia</option>
+                                    <option value="furniture">Muebles</option>
                                 </select>
                                 <label for="floatingSelect">Seleccionar categoria</label>
                             </div>
                             <div class="form-floating mb-3 ">
-                                <select name="idAula" id="idAula" class="form-select"aria-label="seleccionar aula">
+                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula">
                                     <option selected value="">Sin asignar aula</option>
                                     @foreach($teacher as $teachers)
                                         <option value="{{$teachers->id}}">
-                                            {{$teachers->id}} {{$teachers->piso}}
+                                            {{$teachers->id}} {{$teachers->floor}}
                                         </option>
                                     @endforeach
                                 </select>
                                 <label for="floatingSelect">Seleccione aula</label>
                             </div>
                             <div class="form-floating ">
-                                <select name="idProfesor" id="idProfesor" class="form-select" aria-label="seleccionar profesor">
+                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor">
                                     <option selected value="">Sin asignar profesor</option>
                                     @foreach($environment as $environments)
                                         <option value="{{$environments->id}}">
-                                            {{$environments->nombre}} {{$environments->apellido}} {{$environments->licenciatura}}
+                                            {{$environments->name}} {{$environments->lastnames}} {{$environments->degree}}
                                         </option>
                                     @endforeach
                                 </select>

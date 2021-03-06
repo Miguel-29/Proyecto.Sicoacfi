@@ -8,18 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class asset extends Model
 {
     use HasFactory;
-    protected $table='activos';
+    protected $table='assets';
     protected $primaryKey='id';
     protected $fillable= [
-        'marca',
+        'trademark',
         'color',
-        'referencia',
-        'numeroSerial',
-        'fechaIngreso',
-        'mantenimiento',
-        'categoria',
-        'idAula',
-        'idProfesor',
+        'reference',
+        'serial_number',
+        'date_admission',
+        'maintenance',
+        'category',
+        'idenvironment',
+        'idteacher',
         'created_at',
         'updated_at'
     ];

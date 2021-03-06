@@ -21,8 +21,8 @@
                             <tr>
                                 <th>
                                     Marca
-                                    <a type="button" name="Fecha" value="desc" class="fas fa-sort-up" href="{{route('activos.index')}}" style="color: white; text-decoration: none" ></a>
-                                    <a type="button" name="Fecha" value="desc" class="fas fa-sort-down" href="{{route('activos.index',['Fecha'=>'desc'])}}" style="color: white; text-decoration: none"></a>
+                                    <a type="button" class="fas fa-sort-up" href="{{route('activos.index')}}" style="color: white; text-decoration: none" ></a>
+                                    <a type="button" class="fas fa-sort-down" href="{{route('activos.index',['OrderBy'=>'desc'])}}" style="color: white; text-decoration: none"></a>
                                 </th>
                                 <th>Color</th>
                                 <th>Referencia</th>
@@ -39,31 +39,31 @@
                             <tbody>
                             @foreach($asset as $assets)
                                 <tr>
-                                    <td>{{$assets->marca}}</td>
+                                    <td>{{$assets->trademark}}</td>
                                     <td>{{$assets->color}}</td>
-                                    <td>{{$assets->referencia}}</td>
-                                    <td>{{$assets->numeroSerial}}</td>
-                                    <td>{{$assets->categoria}}</td>
-                                    <td>{{$assets->fechaIngreso}}</td>
-                                    <td>{{$assets->mantenimiento}}</td>
-                                    @if ($assets->idAula == '')
+                                    <td>{{$assets->reference}}</td>
+                                    <td>{{$assets->serial_number}}</td>
+                                    <td>{{$assets->category}}</td>
+                                    <td>{{$assets->date_admission}}</td>
+                                    <td>{{$assets->maintenance}}</td>
+                                    @if ($assets->idenvironment == '')
                                         <td>Sin asignar</td>
                                     @else
                                     @foreach($environment as $environments)
-                                        @if($environments->id == $assets->idAula)
+                                        @if($environments->id == $assets->idenvironment)
                                             <td>
-                                                {{$environments->codigo}}
+                                                {{$environments->code}}
                                             </td>
                                         @endif
                                     @endforeach
                                     @endif
-                                    @if ($assets->idProfesor == '')
+                                    @if ($assets->idteacher == '')
                                         <td>Sin asignar</td>
                                     @else
                                     @foreach($teacher as $teachers)
-                                        @if($teachers->id == $assets->idProfesor)
+                                        @if($teachers->id == $assets->idteacher)
                                             <td>
-                                                {{$teachers->nombre}} {{$teachers->apellido}}
+                                                {{$teachers->name}} {{$teachers->lastnames}}
                                             </td>
                                         @endif
                                     @endforeach

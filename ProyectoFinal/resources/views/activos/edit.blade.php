@@ -15,66 +15,66 @@
                             @csrf
                             @method('PUT')
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$asset->marca}}" id="marca" name="marca" placeholder="Marca" autofocus required>
-                                <label for="marca">Marca</label>
+                                <input type="text" class="form-control" value="{{$asset->trademark}}" id="trademark" name="trademark" placeholder="Marca" autofocus required>
+                                <label for="trademark">Marca</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" value="{{$asset->numeroSerial}}" id="numeroSerial" name="numeroSerial" placeholder="serial" required>
-                                <label for="serial">Numero de serial</label>
+                                <input type="number" class="form-control" value="{{$asset->serial_number}}" id="serial_number" name="serial_number" placeholder="Serial" required>
+                                <label for="serial_number">Numero de serial</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" value="{{$asset->referencia}}" id="referencia" name="referencia" placeholder="referencia" required>
-                                <label for="referencia">Referencia</label>
+                                <input type="text" class="form-control" value="{{$asset->reference}}" id="reference" name="reference" placeholder="Referencia" required>
+                                <label for="reference">Referencia</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$asset->fechaIngreso}}" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
-                                <label for="fechaIngreso">Fecha de ingreso</label>
+                                <input type="date" class="form-control" value="{{$asset->date_admission}}" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" required>
+                                <label for="date_admission">Fecha de ingreso</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$asset->mantenimiento}}" id="mantenimiento" name="mantenimiento" placeholder="mantenimiento">
-                                <label for="mantenimiento">Fecha de mantenimiento</label>
+                                <input type="date" class="form-control" value="{{$asset->maintenance}}" id="maintenance" name="maintenance" placeholder="Mantenimiento">
+                                <label for="maintenance">Fecha de mantenimiento</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" value="{{$asset->color}}" id="color" name="color" placeholder="color">
                                 <label for="color">Color</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="categoria" name="categoria" aria-label="Floating label select example" required>
-                                    <option selected>{{$asset->categoria}}</option>
-                                    <option value="Tecnologia">Tecnologia</option>
-                                    <option value="Muebles">Muebles</option>
+                                <select class="form-select" id="category" name="category" aria-label="Floating label select example" required>
+                                    <option selected>{{$asset->category}}</option>
+                                    <option value="technology">Tecnologia</option>
+                                    <option value="furniture">Muebles</option>
                                 </select>
                                 <label for="floatingSelect">Seleccione categoria</label>
                             </div>
                             <div class="form-floating mb-3 ">
-                                <select name="idAula" id="idAula" class="form-select"aria-label="seleccionar aula">
+                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula">
                                     <option selected value="">
-                                        @if($asset->idAula == '')
+                                        @if($asset->idenvironment == '')
                                             Sin asignar aula
                                         @else
-
+                                        
                                         @endif
                                     </option>
-                                    @foreach($ambientes as $ambiente)
-                                        <option value="{{$ambiente->id}}">
-                                            Cod: {{$ambiente->codigo}}, {{$ambiente->piso}}
+                                    @foreach($environment as $environments)
+                                        <option value="{{$environments->id}}">
+                                            Cod: {{$environments->code}}, {{$environments->floor}}
                                         </option>
                                     @endforeach
                                 </select>
                                 <label for="floatingSelect">Seleccione aula</label>
                             </div>
                             <div class="form-floating ">
-                                <select name="idProfesor" id="idProfesor" class="form-select" aria-label="seleccionar profesor">
+                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor">
                                     <option selected value="">
-                                        @if($asset->idProfesor == '')
+                                        @if($asset->idteacher == '')
                                             Sin asignar profesor
                                         @else
 
                                         @endif
                                     </option>
-                                    @foreach($profesores as $profesor)
-                                        <option value="{{$profesor->id}}">
-                                            {{$profesor->nombre}} {{$profesor->apellido}}, de {{$profesor->licenciatura}}
+                                    @foreach($teacher as $teachers)
+                                        <option value="{{$teachers->id}}">
+                                            {{$teachers->name}} {{$teachers->lastnames}}, de {{$teachers->degree}}
                                         </option>
                                     @endforeach
                                 </select>

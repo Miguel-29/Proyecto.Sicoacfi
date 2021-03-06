@@ -15,18 +15,18 @@
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name="codigo" id="codigo" placeholder="{{$environment->codigo}}" value="{{$environment->codigo}}" autofocus required>
-                                <label for="codigo">Codigo: {{$environment->codigo}}</label>
+                                <input type="number" class="form-control" name="code" id="code" placeholder="{{$environment->code}}" value="{{$environment->code}}" autofocus required>
+                                <label for="code">Codigo: {{$environment->code}}</label>
                             </div>
                             <div class="form-floating">
-                                <select class="form-select" name="piso" id="piso" aria-label="seleccione piso" required>
-                                    <option selected>{{$environment->piso}}</option>
-                                    <option value="piso 1">Piso 1</option>
-                                    <option value="piso 2">Piso 2</option>
-                                    <option value="piso 3">Piso 3</option>
-                                    <option value="piso 4">Piso 4</option>
-                                    <option value="piso 5">Piso 5</option>
-                                    <option value="piso 6">Piso 6</option>
+                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso" required>
+                                    <option selected>{{$environment->floor}}</option>
+                                    <option value="floor 1">Piso 1</option>
+                                    <option value="floor 2">Piso 2</option>
+                                    <option value="floor 3">Piso 3</option>
+                                    <option value="floor 4">Piso 4</option>
+                                    <option value="floor 5">Piso 5</option>
+                                    <option value="floor 6">Piso 6</option>
                                 </select>
                                 <label for="floatingSelect">Seleccione el piso</label>
                             </div>

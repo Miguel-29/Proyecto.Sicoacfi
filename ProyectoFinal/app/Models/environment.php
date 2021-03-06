@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class environment extends Model
 {
     use HasFactory;
-    protected $table = 'ambientes';
+    protected $table = 'environments';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'codigo',
-        'piso'
+        'code',
+        'floor'
     ];
 }

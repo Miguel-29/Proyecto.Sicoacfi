@@ -14,20 +14,20 @@
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Marca" required>
-                                <label for="nombre">nombre</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Nombre" required>
+                                <label for="name">nombre</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required>
-                                <label for="apellido">apellido</label>
+                                <input type="text" class="form-control" name="lastnames" id="lastnames" placeholder="Apellidos" required>
+                                <label for="lastnames">apellido</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name='licenciatura' id="licenciatura" placeholder="Licenciatura" required>
-                                <label for="licenciatura">licenciatura</label>
+                                <input type="text" class="form-control" name='degree' id="degree" placeholder="Licenciatura" required>
+                                <label for="degree">licenciatura</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name='documento' id="documento" placeholder="Documento" required>
-                                <label for="documento">documento</label>
+                                <input type="number" class="form-control" name='document' id="document" placeholder="Documento" required>
+                                <label for="document">documento</label>
                             </div>
                         </div>
                     </div>

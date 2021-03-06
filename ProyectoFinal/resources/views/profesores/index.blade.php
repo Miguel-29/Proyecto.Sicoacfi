@@ -29,10 +29,10 @@
                         <tbody>
                             @foreach ($teacher as $teachers)
                             <tr>
-                                <td>{{$teachers->nombre}}</td>
-                                <td>{{$teachers->apellido}}</td>
-                                <td>{{$teachers->licenciatura}}</td>
-                                <td>{{$teachers->documento}}</td>
+                                <td>{{$teachers->name}}</td>
+                                <td>{{$teachers->lastnames}}</td>
+                                <td>{{$teachers->degree}}</td>
+                                <td>{{$teachers->document}}</td>
                                 <td>
                                     <a href="{{route('profesores.edit',$teachers->id)}}">Lapiz</a>   
                                 </td>

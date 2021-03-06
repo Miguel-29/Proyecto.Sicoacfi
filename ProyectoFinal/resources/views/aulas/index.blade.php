@@ -27,8 +27,8 @@
                         <tbody>
                         @foreach($environment as $environments)
                             <tr>
-                                <td>{{$environments->codigo}}</td>
-                                <td>{{$environments->piso}}</td>
+                                <td>{{$environments->code}}</td>
+                                <td>{{$environments->floor}}</td>
                                 <td>
                                     <a href="{{route('aulas.edit',$environments->id)}}">Lapiz</a>
                                 </td>
