@@ -16,11 +16,6 @@ class reporteController extends Controller
         $asset = asset::whereBetween('fechaIngreso', [$fecha, $fechados])
             ->orderBy('marca','asc')
             ->get();
-        // $asset = asset::
-    
-        //     ->where('fechaIngreso','>','%'.$fecha.'%')
-        //     ->where('fechaIngreso','<','%'.$fechados.'%')
-            dd($asset);
         $pdf = \PDF::loadView('reportes.activosFecha', compact('asset','fecha','fechados'));
         return $pdf->download('ReporteActivosFijos.pdf');
     }
