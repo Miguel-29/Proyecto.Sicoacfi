@@ -14,8 +14,8 @@ class reporteController extends Controller
         $fecha = $request->get('Fecha');
         $fechados = $request->get('Fechados');
         if ($fecha < $fechados) {
-        $asset = asset::whereBetween('fechaIngreso', [$fecha, $fechados])
-            ->orderBy('marca','asc')
+        $asset = asset::whereBetween('date_admission', [$fecha, $fechados])
+            ->orderBy('trademark','asc')
             ->get();
         $pdf = \PDF::loadView('reportes.activosFecha', compact('asset','fecha','fechados'));
         return $pdf->download('ReporteActivosFijos.pdf');
