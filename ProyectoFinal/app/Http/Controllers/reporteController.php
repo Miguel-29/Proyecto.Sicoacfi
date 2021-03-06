@@ -7,6 +7,8 @@ use App\Models\asset;
 use App\Models\environment;
 use App\Models\teacher;
 
+use Barryvdh\DomPDF\Facade as PDF;
+
 class reporteController extends Controller
 {
     public function download(Request $request)
