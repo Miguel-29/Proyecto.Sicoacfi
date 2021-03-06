@@ -4,10 +4,10 @@
 @endsection
 @section('content')
     <div class="container-fluid">
-        <div class="row mx-5">
+        <div class="row">
             <div class="card text-center">
                 <div class="card-header">
-                    <input type="search" class="form-control form-control-ligth w-100 sticky-top" type="text" placeholder="Search" id="busqueda" aria-label="Search">
+                    <input type="search" class="form-control form-control-ligth w-100" type="text" placeholder="Search" id="busqueda" aria-label="search">
                     <button class="btn btn-dark" id="butonBuscar" onmouseover="mostrar()" >Buscar</button>
                 </div>
                 <div class="card-header">
