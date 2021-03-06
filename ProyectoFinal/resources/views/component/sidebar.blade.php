@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse  mt-3 ">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
@@ -25,13 +25,25 @@
                     Registrar activos
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('categorias.index')}}">
+            <li class="nav-item btn-group dropend">
+                <a type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true" href="{{route('categorias.index')}}">
                     <span>
                         <i class="btn fas fa-sitemap" style="width: 45px"></i>
                     </span>
                     Categorias
                 </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="btn nav-link" href="">
+                            Tecnologia
+                        </a> 
+                    </li>
+                    <li>
+                        <a class="btn nav-link" href="">
+                            Muebles
+                        </a> 
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('aulas.index')}}">
@@ -68,3 +80,9 @@
         </ul>
     </div>
 </nav>
+
+<style>
+    .dropend:hover>.dropdown-menu {
+        display: block;
+    }
+</style>
