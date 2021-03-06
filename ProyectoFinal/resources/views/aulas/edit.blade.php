@@ -9,18 +9,18 @@
                 <div class="card-header">
                     <h4>Editar aula</h4>
                 </div>
-                <form action="{{route('aulas.update',$ambientes->id)}}" method="post">
+                <form action="{{route('aulas.update',$environment->id)}}" method="post">
                     @csrf
                     @method("PUT")
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name="codigo" id="codigo" placeholder="{{$ambientes->codigo}}" value="{{$ambientes->codigo}}" autofocus required>
-                                <label for="codigo">Codigo: {{$ambientes->codigo}}</label>
+                                <input type="number" class="form-control" name="codigo" id="codigo" placeholder="{{$environment->codigo}}" value="{{$environment->codigo}}" autofocus required>
+                                <label for="codigo">Codigo: {{$environment->codigo}}</label>
                             </div>
                             <div class="form-floating">
                                 <select class="form-select" name="piso" id="piso" aria-label="seleccione piso" required>
-                                    <option selected>{{$ambientes->piso}}</option>
+                                    <option selected>{{$environment->piso}}</option>
                                     <option value="piso 1">Piso 1</option>
                                     <option value="piso 2">Piso 2</option>
                                     <option value="piso 3">Piso 3</option>

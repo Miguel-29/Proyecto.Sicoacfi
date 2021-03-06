@@ -11,36 +11,36 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <form action="{{route('activos.update',$activos->id)}}" method="post" class="offset-lg-3 col-lg-6">
+                        <form action="{{route('activos.update',$asset->id)}}" method="post" class="offset-lg-3 col-lg-6">
                             @csrf
                             @method('PUT')
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$activos->marca}}" id="marca" name="marca" placeholder="Marca" autofocus required>
+                                <input type="text" class="form-control" value="{{$asset->marca}}" id="marca" name="marca" placeholder="Marca" autofocus required>
                                 <label for="marca">Marca</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" value="{{$activos->numeroSerial}}" id="numeroSerial" name="numeroSerial" placeholder="serial" required>
+                                <input type="number" class="form-control" value="{{$asset->numeroSerial}}" id="numeroSerial" name="numeroSerial" placeholder="serial" required>
                                 <label for="serial">Numero de serial</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" value="{{$activos->referencia}}" id="referencia" name="referencia" placeholder="referencia" required>
+                                <input type="number" class="form-control" value="{{$asset->referencia}}" id="referencia" name="referencia" placeholder="referencia" required>
                                 <label for="referencia">Referencia</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$activos->fechaIngreso}}" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
+                                <input type="date" class="form-control" value="{{$asset->fechaIngreso}}" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
                                 <label for="fechaIngreso">Fecha de ingreso</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$activos->mantenimiento}}" id="mantenimiento" name="mantenimiento" placeholder="mantenimiento">
+                                <input type="date" class="form-control" value="{{$asset->mantenimiento}}" id="mantenimiento" name="mantenimiento" placeholder="mantenimiento">
                                 <label for="mantenimiento">Fecha de mantenimiento</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$activos->color}}" id="color" name="color" placeholder="color">
+                                <input type="text" class="form-control" value="{{$asset->color}}" id="color" name="color" placeholder="color">
                                 <label for="color">Color</label>
                             </div>
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="categoria" name="categoria" aria-label="Floating label select example" required>
-                                    <option selected>{{$activos->categoria}}</option>
+                                    <option selected>{{$asset->categoria}}</option>
                                     <option value="Tecnologia">Tecnologia</option>
                                     <option value="Muebles">Muebles</option>
                                 </select>
@@ -49,7 +49,7 @@
                             <div class="form-floating mb-3 ">
                                 <select name="idAula" id="idAula" class="form-select"aria-label="seleccionar aula">
                                     <option selected value="">
-                                        @if($activos->idAula == '')
+                                        @if($asset->idAula == '')
                                             Sin asignar aula
                                         @else
 
@@ -66,7 +66,7 @@
                             <div class="form-floating ">
                                 <select name="idProfesor" id="idProfesor" class="form-select" aria-label="seleccionar profesor">
                                     <option selected value="">
-                                        @if($activos->idProfesor == '')
+                                        @if($asset->idProfesor == '')
                                             Sin asignar profesor
                                         @else
 

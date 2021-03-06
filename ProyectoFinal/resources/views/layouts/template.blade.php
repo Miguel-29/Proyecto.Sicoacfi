@@ -9,10 +9,10 @@
     <meta name="generator" content="">
     <title>@yield('title')</title>
     <link rel="shortcut icon" type="image/png" href="/images/LogoMakr-1lXjxx.png"/>
-
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{url('css/app.css')}}" />
-
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
     <style>
         .bd-placeholder-img {

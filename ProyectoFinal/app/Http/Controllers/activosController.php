@@ -2,49 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\activos;
-use App\Models\ambientes;
-use App\Models\profesores;
+use App\Models\asset;
+use App\Models\environment;
+use App\Models\teacher;
 use Illuminate\Http\Request;
 
 class activosController extends Controller
 {
     public function index() {
         $orden = 'asc';
-        $activos = activos::orderBy('marca',$orden)->get();
-        $ambientes = ambientes::all();
-        $profesores = profesores::all();
-        return view('activos.index', compact('activos','profesores','ambientes','orden'));
+        $asset = asset::orderBy('marca',$orden)->get();
+        $environment = environment::all();
+        $teacher = teacher::all();
+        return view('activos.index', compact('asset','teacher','environment','orden'));
     }
     public function indexBajas() {
-        $activos = activos::all();
-        return view('bajasActivos.index', compact('activos'));
+        $asset = asset::all();
+        return view('bajasActivos.index', compact('asset'));
     }
     public function create() {
-        $profesores = profesores::all();
-        $ambientes = ambientes::all();
-        return view('activos.create', compact('profesores','ambientes'));
+        $teacher = teacher::all();
+        $environment = environment::all();
+        return view('activos.create', compact('teacher','environment'));
     }
     public function store(Request $request) {
-        $activos = activos::create($request->all());
+        $asset = asset::create($request->all());
         return redirect()->route('activos.index')
         ->with('success','Activo fijo registrado con exito');;
     }
     public function edit($id) {
-        $activos=activos::find($id);
-        $ambientes = ambientes::all();
-        $profesores = profesores::all();
-        return view('activos.edit',compact('ambientes','profesores','activos'));
+        $asset=asset::find($id);
+        $environment = environment::all();
+        $teacher = teacher::all();
+        return view('activos.edit',compact('environment','teacher','asset'));
     }
     public function update(Request $request,$id) {
-        $activos=activos::find($id)->update($request->all());
+        $asset=asset::find($id)->update($request->all());
         return redirect()->route('activos.index')
         ->with('success','Activo fijo actualizado con exito');;
     }
     public function categorias() {
-        $activos = activos::all();
-        $ambientes = ambientes::all();
-        $profesores = profesores::all();
-        return view('categorias.index', compact('activos','profesores','ambientes'));
+        $asset = asset::all();
+        $environment = environment::all();
+        $teacher = teacher::all();
+        return view('categorias.index', compact('asset','teacher','environment'));
     }
 }

@@ -27,14 +27,14 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach ($profesores as $profesor)
+                            @foreach ($teacher as $teachers)
                             <tr>
-                                <td>{{$profesor->nombre}}</td>
-                                <td>{{$profesor->apellido}}</td>
-                                <td>{{$profesor->licenciatura}}</td>
-                                <td>{{$profesor->documento}}</td>
+                                <td>{{$teachers->nombre}}</td>
+                                <td>{{$teachers->apellido}}</td>
+                                <td>{{$teachers->licenciatura}}</td>
+                                <td>{{$teachers->documento}}</td>
                                 <td>
-                                    <a href="{{route('profesores.edit',$profesor->id)}}">Lapiz</a>   
+                                    <a href="{{route('profesores.edit',$teachers->id)}}">Lapiz</a>   
                                 </td>
                                 <td>X</td>
                             </tr>

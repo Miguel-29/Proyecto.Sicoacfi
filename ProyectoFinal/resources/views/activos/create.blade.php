@@ -48,9 +48,9 @@
                             <div class="form-floating mb-3 ">
                                 <select name="idAula" id="idAula" class="form-select"aria-label="seleccionar aula">
                                     <option selected value="">Sin asignar aula</option>
-                                    @foreach($ambientes as $ambiente)
-                                        <option value="{{$ambiente->id}}">
-                                            {{$ambiente->id}} {{$ambiente->piso}}
+                                    @foreach($teacher as $teachers)
+                                        <option value="{{$teachers->id}}">
+                                            {{$teachers->id}} {{$teachers->piso}}
                                         </option>
                                     @endforeach
                                 </select>
@@ -59,9 +59,9 @@
                             <div class="form-floating ">
                                 <select name="idProfesor" id="idProfesor" class="form-select" aria-label="seleccionar profesor">
                                     <option selected value="">Sin asignar profesor</option>
-                                    @foreach($profesores as $profesor)
-                                        <option value="{{$profesor->id}}">
-                                            {{$profesor->nombre}} {{$profesor->apellido}} {{$profesor->licenciatura}}
+                                    @foreach($environment as $environments)
+                                        <option value="{{$environments->id}}">
+                                            {{$environments->nombre}} {{$environments->apellido}} {{$environments->licenciatura}}
                                         </option>
                                     @endforeach
                                 </select>

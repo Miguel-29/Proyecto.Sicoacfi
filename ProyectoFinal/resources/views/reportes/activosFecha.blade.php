@@ -12,15 +12,15 @@
     </tr>
     </thead>
     <tbody>        
-        @foreach($activos as $activo)
+        @foreach($asset as $assets)
             <tr>
-                <td style="border: 1px solid">{{$activo->marca}}</td>
-                <td style="border: 1px solid">{{$activo->color}}</td>
-                <td style="border: 1px solid">{{$activo->referencia}}</td>
-                <td style="border: 1px solid">{{$activo->numeroSerial}}</td>
-                <td style="border: 1px solid">{{$activo->categoria}}</td>
-                <td style="border: 1px solid">{{$activo->fechaIngreso}}</td>
-                <td style="border: 1px solid">{{$activo->mantenimiento}}</td>
+                <td style="border: 1px solid">{{$assets->marca}}</td>
+                <td style="border: 1px solid">{{$assets->color}}</td>
+                <td style="border: 1px solid">{{$assets->referencia}}</td>
+                <td style="border: 1px solid">{{$assets->numeroSerial}}</td>
+                <td style="border: 1px solid">{{$assets->categoria}}</td>
+                <td style="border: 1px solid">{{$assets->fechaIngreso}}</td>
+                <td style="border: 1px solid">{{$assets->mantenimiento}}</td>
             </tr>
         @endforeach
     </tbody>

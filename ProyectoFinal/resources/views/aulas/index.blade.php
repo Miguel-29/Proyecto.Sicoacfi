@@ -25,12 +25,12 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($ambientes as $ambiente)
+                        @foreach($environment as $environments)
                             <tr>
-                                <td>{{$ambiente->codigo}}</td>
-                                <td>{{$ambiente->piso}}</td>
+                                <td>{{$environments->codigo}}</td>
+                                <td>{{$environments->piso}}</td>
                                 <td>
-                                    <a href="{{route('aulas.edit',$ambiente->id)}}">Lapiz</a>
+                                    <a href="{{route('aulas.edit',$environments->id)}}">Lapiz</a>
                                 </td>
                                 <td>X</td>
                             </tr>

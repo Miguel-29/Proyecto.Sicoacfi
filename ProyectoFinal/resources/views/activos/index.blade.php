@@ -29,39 +29,39 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($activos as $activo)
+                            @foreach($asset as $assets)
                                 <tr>
-                                    <td>{{$activo->marca}}</td>
-                                    <td>{{$activo->color}}</td>
-                                    <td>{{$activo->referencia}}</td>
-                                    <td>{{$activo->numeroSerial}}</td>
-                                    <td>{{$activo->categoria}}</td>
-                                    <td>{{$activo->fechaIngreso}}</td>
-                                    <td>{{$activo->mantenimiento}}</td>
-                                    @if ($activo->idAula == '')
+                                    <td>{{$assets->marca}}</td>
+                                    <td>{{$assets->color}}</td>
+                                    <td>{{$assets->referencia}}</td>
+                                    <td>{{$assets->numeroSerial}}</td>
+                                    <td>{{$assets->categoria}}</td>
+                                    <td>{{$assets->fechaIngreso}}</td>
+                                    <td>{{$assets->mantenimiento}}</td>
+                                    @if ($assets->idAula == '')
                                         <td>Sin asignar</td>
                                     @else
-                                    @foreach($ambientes as $ambiente)
-                                        @if($ambiente->id == $activo->idAula)
+                                    @foreach($environment as $environments)
+                                        @if($environments->id == $assets->idAula)
                                             <td>
-                                                {{$ambiente->codigo}}
+                                                {{$environments->codigo}}
                                             </td>
                                         @endif
                                     @endforeach
                                     @endif
-                                    @if ($activo->idProfesor == '')
+                                    @if ($assets->idProfesor == '')
                                         <td>Sin asignar</td>
                                     @else
-                                    @foreach($profesores as $profesor)
-                                        @if($profesor->id == $activo->idProfesor)
+                                    @foreach($teacher as $teachers)
+                                        @if($teachers->id == $assets->idProfesor)
                                             <td>
-                                                {{$profesor->nombre}} {{$profesor->apellido}}
+                                                {{$teachers->nombre}} {{$teachers->apellido}}
                                             </td>
                                         @endif
                                     @endforeach
                                     @endif
                                     <td>
-                                        <a href="{{route('activos.edit',$activo->id)}}">Lapiz</a>
+                                        <a href="{{route('activos.edit',$assets->id)}}">Lapiz</a>
                                     </td>
                                     <td>
                                         <a href="#">X</a>

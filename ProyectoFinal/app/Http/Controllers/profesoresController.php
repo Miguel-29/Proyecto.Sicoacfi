@@ -2,31 +2,31 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\profesores;
+use App\Models\teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class ProfesoresController extends Controller
 {
     public function index() {
-        $profesores = profesores::all();        
-        return view('profesores.index', compact('profesores'));
+        $teacher = teacher::all();        
+        return view('profesores.index', compact('teacher'));
     }
     public function create() {
         return view('profesores.create');
     }
     public function store(Request $request) {
-        $profesores=profesores::create($request->all());
+        $teacher=teacher::create($request->all());
         return redirect()->route('profesores.index')
         ->with('success','Profesor registrado con exito');
     }
     public function edit($id) {
-        $profesores = profesores::find($id);
+        $teacher = teacher::find($id);
         Log::info('hola');
-        return view('profesores.edit',compact('profesores'));
+        return view('profesores.edit',compact('teacher'));
     }
     public function update(Request $request,$id) {
-        $profesores=profesores::find($id)->update($request->all());
+        $teacher=teacher::find($id)->update($request->all());
         return redirect()->route('profesores.index')
         ->with('success','Profesor actualizado con exito');;
     }

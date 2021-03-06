@@ -33,8 +33,8 @@
                         <label for="fechaIngreso">Fecha inicial</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" placeholder="fechaIngreso" required>
-                        <label for="fechaIngreso">Fecha final</label>
+                        <input type="date" class="form-control" id="fechaIngreso2" name="fechaIngreso2" placeholder="fechaIngreso2" required>
+                        <label for="fechaIngreso2">Fecha final</label>
                     </div>
                 </div>
                 <div class="card-footer">

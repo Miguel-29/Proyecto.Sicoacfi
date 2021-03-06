@@ -9,25 +9,25 @@
                     <div class="card-header">
                         <h3>Registrar profesor</h3>
                     </div>
-                <form action="{{route('profesores.update',$profesores->id)}}" method="post">
+                <form action="{{route('profesores.update',$teacher->id)}}" method="post">
                 @csrf
                 @method("PUT")
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" value="{{$profesores->nombre}}" autofocus required>
+                                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre" value="{{$teacher->nombre}}" autofocus required>
                                 <label for="nombre">nombre</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" value="{{$profesores->apellido}}" required>
+                                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" value="{{$teacher->apellido}}" required>
                                 <label for="apellido">apellido</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name='licenciatura' id="licenciatura" placeholder="Licenciatura" value="{{$profesores->licenciatura}}" required>
+                                <input type="text" class="form-control" name='licenciatura' id="licenciatura" placeholder="Licenciatura" value="{{$teacher->licenciatura}}" required>
                                 <label for="licenciatura">licenciatura</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name='documento' id="documento" placeholder="Documento" value="{{$profesores->documento}}" required>
+                                <input type="number" class="form-control" name='documento' id="documento" placeholder="Documento" value="{{$teacher->documento}}" required>
                                 <label for="documento">documento</label>
                             </div>
                         </div>
