@@ -8,7 +8,7 @@
             <div class="card-header">
                 <h5>Generar reporte de activos fijos</h5>
             </div>
-            <form class="form-inline" action="{{route('reportes.descarga')}}" method="get">
+            <form class="form-inline" action="{{route('reportes.descarga')}} " method="get">
                 <div class="card-body py-3">
                     <div class="form-floating mb-3">
                         <input type="date" class="form-control" id="Fecha" name="Fecha" placeholder="Fecha inicial" required>
@@ -18,7 +18,9 @@
                         <input type="date" class="form-control" id="Fechados" name="Fechados" placeholder="Fecha final" required>
                         <label for="Fechados">Fecha final</label>
                     </div>
-                    <button class="btn btn-success w-100" type="submit">Buscar</button>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="submit">Generar reporte</button>
                 </div>
             </form>
         </div>

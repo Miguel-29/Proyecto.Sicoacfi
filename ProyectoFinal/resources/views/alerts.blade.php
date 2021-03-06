@@ -10,3 +10,9 @@
     {{ $message }}
 </div>
 @endif
+@if ($message = Session::get('error'))
+<div class="alert alert-danger alert-block alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert">×</button>
+    {{ $message }}
+</div>
+@endif

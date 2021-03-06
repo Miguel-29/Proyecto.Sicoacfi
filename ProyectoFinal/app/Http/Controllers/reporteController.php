@@ -13,11 +13,16 @@ class reporteController extends Controller
     {
         $fecha = $request->get('Fecha');
         $fechados = $request->get('Fechados');
+        if ($fecha < $fechados) {
         $asset = asset::whereBetween('fechaIngreso', [$fecha, $fechados])
             ->orderBy('marca','asc')
             ->get();
         $pdf = \PDF::loadView('reportes.activosFecha', compact('asset','fecha','fechados'));
         return $pdf->download('ReporteActivosFijos.pdf');
+        } else {
+            return redirect()->route('reportes.index') 
+            ->with('error','Por favor la fecha de corte no debe ser mayor a la fecha inicial.');
+        }
     }
     public function index() {
         return view('reportes.index');

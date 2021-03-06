@@ -14,25 +14,9 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
 </head>
 <body>
 @include('component.navbar')
-
 
 <div class="container-fluid">
     <div class="row">
@@ -45,8 +29,6 @@
         </div>
     </div>
 </div>
-
-
 
 <script src="{{ url('js/app.js')}}"></script>
 

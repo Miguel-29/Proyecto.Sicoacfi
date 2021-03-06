@@ -7,6 +7,10 @@
         <div class="row mx-5">
             <div class="card text-center">
                 <div class="card-header">
+                    <input class="form-control form-control-ligth w-100 sticky-top" type="text" placeholder="Search" id="busqueda" aria-label="Search">
+                    <button class="btn btn-dark" id="butonBuscar" onmouseover="mostrar()" >Buscar</button>
+                </div>
+                <div class="card-header">
                     <h4>Lista de activos fijos</h4>
                 </div>
                 <div class="card-body">
@@ -15,7 +19,11 @@
                             <caption>Lista de activos fijos</caption>
                             <thead class="table-dark">
                             <tr>
-                                <th>Marca <span><i type="button" class="fas fa-sort-down" onclick="$orden='desc' {{route('activos.index')}}" ></i></span></th>
+                                <th>
+                                    Marca
+                                    <a type="button" name="Fecha" value="desc" class="fas fa-sort-up" href="{{route('activos.index')}}" style="color: white; text-decoration: none" ></a>
+                                    <a type="button" name="Fecha" value="desc" class="fas fa-sort-down" href="{{route('activos.index',['Fecha'=>'desc'])}}" style="color: white; text-decoration: none"></a>
+                                </th>
                                 <th>Color</th>
                                 <th>Referencia</th>
                                 <th>Serial</th>

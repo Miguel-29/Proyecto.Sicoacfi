@@ -9,11 +9,13 @@ use Illuminate\Http\Request;
 
 class activosController extends Controller
 {
-    public function index() {
-        $orden = 'asc';
-        $asset = asset::orderBy('marca',$orden)->get();
-        $environment = environment::all();
-        $teacher = teacher::all();
+    public function index(Request $request) {
+    $orden = $request->get('Fecha');
+    $orden == null ? $asset = asset::orderBy('marca','asc')->get() 
+    : $asset = asset::orderBy('marca',$orden)
+    ->get();
+    $environment = environment::all();
+    $teacher = teacher::all();
         return view('activos.index', compact('asset','teacher','environment','orden'));
     }
     public function indexBajas() {
