@@ -7,7 +7,7 @@
         <div class="row mx-5">
             <div class="card text-center">
                 <div class="card-header">
-                    <input class="form-control form-control-ligth w-100 sticky-top" type="text" placeholder="Search" id="busqueda" aria-label="Search">
+                    <input type="search" class="form-control form-control-ligth w-100 sticky-top" type="text" placeholder="Search" id="busqueda" aria-label="Search">
                     <button class="btn btn-dark" id="butonBuscar" onmouseover="mostrar()" >Buscar</button>
                 </div>
                 <div class="card-header">
