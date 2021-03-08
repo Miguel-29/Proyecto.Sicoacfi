@@ -40,17 +40,17 @@
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="category" name="category" aria-label="Floating label select" required>
                                     <option selected>Categorias</option>
-                                    <option value="technology">Tecnologia</option>
-                                    <option value="furniture">Muebles</option>
+                                    <option value="tecnologia">Tecnologia</option>
+                                    <option value="muebles">Muebles</option>
                                 </select>
                                 <label for="floatingSelect">Seleccionar categoria</label>
                             </div>
                             <div class="form-floating mb-3 ">
                                 <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula">
                                     <option selected value="">Sin asignar aula</option>
-                                    @foreach($teacher as $teachers)
-                                        <option value="{{$teachers->id}}">
-                                            {{$teachers->id}} {{$teachers->floor}}
+                                    @foreach($environment as $environments)
+                                        <option value="{{$environments->id}}">
+                                            {{$environments->id}} {{$environments->floor}}
                                         </option>
                                     @endforeach
                                 </select>
@@ -59,9 +59,9 @@
                             <div class="form-floating ">
                                 <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor">
                                     <option selected value="">Sin asignar profesor</option>
-                                    @foreach($environment as $environments)
-                                        <option value="{{$environments->id}}">
-                                            {{$environments->name}} {{$environments->lastnames}} {{$environments->degree}}
+                                    @foreach($teacher as $teachers)
+                                        <option value="{{$teachers->id}}">
+                                            {{$teachers->name}} {{$teachers->lastnames}} {{$teachers->degree}}
                                         </option>
                                     @endforeach
                                 </select>

@@ -21,21 +21,23 @@
                             <th>Serial</th>
                             <th>Categoria</th>
                             <th>Fecha de ingreso</td>
-                            <th>Mantenimiento</th>              
-                            <th>Editar</th>
+                            <th>Mantenimiento</th>
+                            <th>Restaurar</th>
+                            <th>Eliminar</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($activos as $activo)
+                        @foreach ($asset as $activo)
                             <tr>                            
-                                <td>{{$activo->marca}}</td>
+                                <td>{{$activo->trademark}}</td>
                                 <td>{{$activo->color}}</td>
-                                <td>{{$activo->referencia}}</td>
-                                <td>{{$activo->numeroSerial}}</td>
-                                <td>{{$activo->categoria}}</td>
-                                <td>{{$activo->fechaIngreso}}</td>
-                                <td>{{$activo->mantenimiento}}</td>
-                                <td>Lapiz</td> 
+                                <td>{{$activo->reference}}</td>
+                                <td>{{$activo->serial_number}}</td>
+                                <td>{{$activo->category}}</td>
+                                <td>{{$activo->date_admission}}</td>
+                                <td>{{$activo->maintenance}}</td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         @endforeach
                         </tbody>

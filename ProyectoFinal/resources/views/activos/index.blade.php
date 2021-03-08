@@ -7,8 +7,10 @@
         <div class="row">
             <div class="card text-center">
                 <div class="card-header">
-                    <input type="search" class="form-control form-control-ligth w-100" type="text" placeholder="Search" id="busqueda" aria-label="search">
-                    <button class="btn btn-dark" id="butonBuscar" onmouseover="mostrar()" >Buscar</button>
+                    <form class="form-inline" action="{{route('activos.index')}}" method="get">
+                        <input type="search" name="search" class="form-control form-control-ligth w-100" type="text" value="{{$search}}" placeholder="Search" id="search" aria-label="search">
+                        <button class="btn btn-dark" id="btnsearch" onmouseover="mostrar()">Buscar</button>
+                    </form>
                 </div>
                 <div class="card-header">
                     <h4>Lista de activos fijos</h4>
@@ -72,7 +74,13 @@
                                         <a href="{{route('activos.edit',$assets->id)}}">Lapiz</a>
                                     </td>
                                     <td>
-                                        <a href="#">X</a>
+                                        <form action="{{route('activos.delete',$assets->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">
+                                                <i class="fas fa-ban"></i>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
@@ -81,10 +89,23 @@
                     </div>
                 </div>
                 <div class="card-footer">
-
                 </div>
             </div>
         </div>
     </div>
 @endsection
 
+
+<script>
+    mostrar = () => { 
+        let busqueda = document.getElementById('search');
+        let boton = document.getElementById('btnsearch');
+        busqueda.style.display = 'inline';
+        boton.style.display = 'none';
+    }
+</script>
+<style>
+    #search {
+        display: none
+    }
+</style>

@@ -21,13 +21,14 @@ class CreateAssetsTable extends Migration
             $table->float('serial_number',45);
             $table->string('date_admission',45);
             $table->string('maintenance',45);
-            $table->enum('category',['technology','furniture']);
+            $table->enum('category',['tecnologia','muebles']);
 
             $table->bigInteger('idenvironment')->unsigned()->nullable();
             $table->foreign('idenvironment')->references('id')->on('environments');
             $table->bigInteger('idteacher')->unsigned()->nullable();
             $table->foreign('idteacher')->references('id')->on('teachers');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ class CreateEnvironmentsTable extends Migration
         Schema::create('environments', function (Blueprint $table) {
             $table->id();
             $table->float('code',15);
-            $table->enum('floor',['floor 1','floor 2','floor 3','floor 4','floor 5','floor 6']);
+            $table->enum('floor',['piso 1','piso 2','piso 3','piso 4','piso 5','piso 6']);
             $table->timestamps();
         });
     }

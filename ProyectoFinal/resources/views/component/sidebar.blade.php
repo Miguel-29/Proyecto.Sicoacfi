@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="nav-item btn-group dropend">
-                <a type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true" href="{{route('categorias.index')}}">
+                <a type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
                     <span>
                         <i class="btn fas fa-sitemap" style="width: 45px"></i>
                     </span>
@@ -34,12 +34,13 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="btn nav-link" href="">
+                        <a class="btn nav-link" href="{{route('activos.index',['showtechnology'=>'tecnologia'])}}">
+                            
                             Tecnologia
                         </a> 
                     </li>
                     <li>
-                        <a class="btn nav-link" href="">
+                        <a class="btn nav-link" href="{{route('activos.index',['showfurniture'=>'muebles'])}}">
                             Muebles
                         </a> 
                     </li>

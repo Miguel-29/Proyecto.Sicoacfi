@@ -21,18 +21,3 @@
         </li>
     </ul>
 </header>
-
-<script>
-    mostrar = () => { 
-        let busqueda = document.getElementById('busqueda');
-        let boton = document.getElementById('butonBuscar');
-        busqueda.style.display = 'inline';
-        boton.style.display = 'none';
-    }
-</script>
-
-<style>
-    #busqueda {
-        display: none
-    }
-</style>

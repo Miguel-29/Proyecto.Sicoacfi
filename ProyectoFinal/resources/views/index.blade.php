@@ -10,9 +10,8 @@
         <h4 class="my-5">¿Que quieres hacer hoy?</h4>
         <div class="h5 pt-lg-5">
             <a href="{{route('activos.index')}}">Ver activos fijos</a>,
-            <a href="{{route('profesores.index')}}">gestionar profesores</a>,
-            <a href="{{route('aulas.index')}}">gestionar aulas </a>, o mejor quieres
-            <a href="{{route('categorias.index')}}">ver categorias</a>.
+            <a href="{{route('profesores.index')}}">gestionar profesores</a>, o mejor quieres
+            <a href="{{route('aulas.index')}}">gestionar aulas </a>
         </div>
     </div>
 </div>

@@ -32,6 +32,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::post('activos',[activosController::class,'store'])->name('activos.store');
     Route::get('activos/edit/{id}',[activosController::class,'edit'])->name('activos.edit');
     Route::put('activos{id}',[activosController::class,'update'])->name('activos.update');
+    Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
 
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');
 
@@ -47,10 +48,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group( function () {
     Route::get('aulas/edit/{id}',[AmbientesController::class,'edit'])->name('aulas.edit');
     Route::put('aulas{id}',[AmbientesController::class,'update'])->name('aulas.update');
 
-    Route::get('categorias',[activosController::class,'categorias'])->name('categorias.index');
-
+    Route::get('activos/tecnologia',[activosController::class,'showtecnhology'])->name('showtecnhology.index');
+    Route::get('activos/muebles',[activosController::class,'showfurniture'])->name('showfurniture.index');
+    
     Route::get('reportes',[reporteController::class,'index'])->name('reportes.index');
-    Route::get('reportes/fecha',[reporteController::class,'download'])->name('reportes.descarga');
+    Route::get('reportes/activos',[reporteController::class,'download'])->name('reportes.descarga');
+    Route::get('reportes/bajas',[reporteController::class,'downloadDown'])->name('reportesbajas.descarga');
 });
 
 

@@ -20,12 +20,12 @@
                             <div class="form-floating">
                                 <select class="form-select" name="floor" id="floor" aria-label="seleccione piso" required>
                                     <option selected>Seleccione el piso</option>
-                                    <option value="floor 1">Piso 1</option>
-                                    <option value="floor 2">Piso 2</option>
-                                    <option value="floor 3">Piso 3</option>
-                                    <option value="floor 4">Piso 4</option>
-                                    <option value="floor 5">Piso 5</option>
-                                    <option value="floor 6">Piso 6</option>
+                                    <option value="piso 1">Piso 1</option>
+                                    <option value="piso 2">Piso 2</option>
+                                    <option value="piso 3">Piso 3</option>
+                                    <option value="piso 4">Piso 4</option>
+                                    <option value="piso 5">Piso 5</option>
+                                    <option value="piso 6">Piso 6</option>
                                 </select>
                                 <label for="floatingSelect">Seleccione el piso</label>
                             </div>
