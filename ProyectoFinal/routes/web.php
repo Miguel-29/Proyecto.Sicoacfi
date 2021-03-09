@@ -23,7 +23,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('/');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->group( function () {
+Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::get('/', function () {
         return view('index');
     });
