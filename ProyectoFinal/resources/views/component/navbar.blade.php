@@ -1,6 +1,6 @@
 <header class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap shadow px-3">
     <a class="navbar-brand col-md-3 col-lg-2 bg-dark me-0 fs-5">
-        <img src="/images/Logo4.png" width="40" height="40">
+        <img src="{{asset('/images/Logo4.png')}}" width="40" height="40">
         SICOACFI
     </a>
     <button class="navbar-toggler position-absolute d-md-none collapsed"  type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"  aria-label="Toggle navigation">
