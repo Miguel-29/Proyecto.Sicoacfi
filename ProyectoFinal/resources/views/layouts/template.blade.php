@@ -5,10 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="pagina web especializada en el manejo de activos fijos">
-    <meta name="Miguel Romero" content="manejo de activos fijos">
+    <meta name="Miguel Romero" content="manejo de activos fijos">    
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Last-Modified" content="0">
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">    
+    <meta http-equiv="Last-Modified" content="0">    
+    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">    
+    <meta http-equiv="Pragma" content="no-cache">
     <meta name="generator" content="">
     <title>@yield('title')</title>
-    <link rel="shortcut icon" type="image/png" href="/images/LogoMakr-1lXjxx.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{asset('/images/LogoMakr-1lXjxx.png')}}"/>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{url('css/app.css')}}" />
     

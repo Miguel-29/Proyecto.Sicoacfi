@@ -1,3 +1,4 @@
+{{-- <img src="{{asset('/images/Logo4.png')}}" width="40" height="40"> --}}
 <table class="table" style="width: 100%">
     <caption>Lista de activos fijos</caption>
     <thead class="table-dark">

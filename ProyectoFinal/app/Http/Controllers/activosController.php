@@ -10,26 +10,27 @@ use Illuminate\Http\Request;
 class activosController extends Controller
 {
     public function index(Request $request) {
-    $search = $request->get('search');
-    $order = $request->get('OrderBy');
-    $showtechnology = $request->get('showtechnology');
-    $showfurniture = $request->get('showfurniture');
-    $order == null ? $asset = asset::orderBy('trademark','asc')
-        ->where('trademark','LIKE','%'.$search.'%')
-        ->where('category','LIKE','%'.$showtechnology.'%')
-        ->where('category','LIKE','%'.$showfurniture.'%')
-        ->paginate('2')
-    : $asset = asset::orderBy('trademark',$order)
-        ->where('trademark','LIKE','%'.$search.'%')
-        ->where('category','LIKE','%'.$showtechnology.'%')
-        ->where('category','LIKE','%'.$showfurniture.'%')
-        ->paginate('2');
+        $search = $request->get('search');
+        $order = $request->get('OrderBy');
+        $showtechnology = $request->get('showtechnology');
+        $showfurniture = $request->get('showfurniture');
+        $order == null ? $asset = asset::orderBy('trademark','asc')
+            ->where('trademark','LIKE','%'.$search.'%')
+            ->where('category','LIKE','%'.$showtechnology.'%')
+            ->where('category','LIKE','%'.$showfurniture.'%')
+            ->paginate(10)
+        : $asset = asset::orderBy('trademark',$order)
+            ->where('trademark','LIKE','%'.$search.'%')
+            ->where('category','LIKE','%'.$showtechnology.'%')
+            ->where('category','LIKE','%'.$showfurniture.'%')
+            ->paginate(10);
         $environment = environment::all();
         $teacher = teacher::all();
-        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology'));
+        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture'));
     }
     public function indexBajas() {        
-        $asset=asset::onlyTrashed()->get();
+        $asset=asset::onlyTrashed()
+            ->paginate(10);
         return view('bajasActivos.index', compact('asset'));
     }
     public function create() {
@@ -52,24 +53,6 @@ class activosController extends Controller
         $asset=asset::find($id)->update($request->all());
         return redirect()->route('activos.index')
         ->with('success','Activo fijo actualizado con exito');;
-    }
-    public function showtecnhology(Request $request) {
-        $search = $request->get('search');
-        $asset = asset::where('category','=','tecnologia')
-        ->where('trademark','LIKE','%'.$search.'%')
-        ->get();
-        $environment = environment::all();
-        $teacher = teacher::all();
-        return view('categorias.index', compact('asset','teacher','environment','search'));
-    }
-    public function showfurniture(Request $request) {
-        $search = $request->get('search');
-        $asset = asset::where('category','=','muebles')
-        ->where('trademark','LIKE','%'.$search.'%')
-        ->get();
-        $environment = environment::all();
-        $teacher = teacher::all();
-        return view('categorias.index', compact('asset','teacher','environment','search'));
     }
     public function delete($id){
         $asset=asset::find($id)->delete();

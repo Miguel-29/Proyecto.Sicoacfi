@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class ProfesoresController extends Controller
 {
     public function index() {
-        $teacher = teacher::all();        
+        $teacher = teacher::paginate(10);        
         return view('profesores.index', compact('teacher'));
     }
     public function create() {

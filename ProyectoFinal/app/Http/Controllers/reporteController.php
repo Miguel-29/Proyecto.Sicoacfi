@@ -36,7 +36,7 @@ class reporteController extends Controller
             ->orderBy('trademark','asc')
             ->get();
         $pdf = \PDF::loadView('reportes.activosFecha', compact('asset','fecha','fechados'));
-        return $pdf->download('ReporteActivosFijos.pdf');
+        return $pdf->download('ReporteBajasActivos.pdf');
         } else {
             return redirect()->route('reportes.index') 
             ->with('error','Por favor la fecha de corte no debe ser mayor a la fecha inicial.');

@@ -49,7 +49,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('aulas.index')}}">
                     <span>
-                        <i class="btn fas fa-users-class" style="width: 45px"></i>
+                        <i class="btn fas fa-kaaba" style="width: 45px"></i>
                     </span>
                     Gestionar aulas
                 </a>
@@ -73,7 +73,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('bajasActivos.index')}}">
                     <span>
-                        <i class="btn fas fa-align-slash" style="width: 45px" ></i>
+                        <i class="btn far fa-window-close" style="width: 45px" ></i>
                     </span>
                     Activos dados de baja
                 </a>

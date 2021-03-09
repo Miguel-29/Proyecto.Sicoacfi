@@ -8,7 +8,7 @@
     </button>
     <ul class="nav justify-content-end ">
         <li class="nav-item text-nowrap px-3">
-            <a type="button" class="btn btn-dark " href="#">INICIO</a>
+            <a type="button" class="btn btn-dark " href="/">INICIO</a>
         </li>
         <li class="nav-item text-nowrap px-3">
             <a type="button" class="btn btn-dark" href="#">SOPORTE TECNICO</a>

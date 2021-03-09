@@ -43,8 +43,12 @@
                     </table>
                     </div>
                 </div>
-                <div class="card-footer">
-
+                <div class="card-footer ">
+                    <div class="offset-4 offset-sm-5">
+                        <div class="offset-sm-1">
+                            {{$teacher->links('pagination::bootstrap-4')}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
