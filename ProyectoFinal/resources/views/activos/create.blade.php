@@ -50,7 +50,7 @@
                                     <option selected value="">Sin asignar aula</option>
                                     @foreach($environment as $environments)
                                         <option value="{{$environments->id}}">
-                                            {{$environments->id}} {{$environments->floor}}
+                                            Codigo: {{$environments->code}} {{$environments->floor}}
                                         </option>
                                     @endforeach
                                 </select>

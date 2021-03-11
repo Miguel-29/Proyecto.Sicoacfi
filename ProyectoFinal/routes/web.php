@@ -35,18 +35,21 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
 
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');
+    // Route::delete('activos/{id}',[activosController::Class,'deletes'])->name('bajasActivos.delete');
 
     Route::get('profesores',[ProfesoresController::class,'index'])->name('profesores.index');
     Route::get('profesores/create',[ProfesoresController::class,'create'])->name('profesores.create');
     Route::post('profesores',[ProfesoresController::class,'store'])->name('profesores.store');
     Route::get('profesores/edit/{id}',[ProfesoresController::class,'edit'])->name('profesores.edit');
     Route::put('profesores{id}',[ProfesoresController::class,'update'])->name('profesores.update');
+    Route::delete('profesores/{id}',[ProfesoresController::Class,'delete'])->name('profesores.delete');
 
     Route::get('aulas',[AmbientesController::class,'index'])->name('aulas.index');
     Route::get('aulas/create',[AmbientesController::class,'create'])->name('aulas.create');
     Route::post('aulas',[AmbientesController::class,'store'])->name('aulas.store');
     Route::get('aulas/edit/{id}',[AmbientesController::class,'edit'])->name('aulas.edit');
     Route::put('aulas{id}',[AmbientesController::class,'update'])->name('aulas.update');
+    Route::delete('aulas/{id}',[AmbientesController::Class,'delete'])->name('aulas.delete');
 
     Route::get('activos/tecnologia',[activosController::class,'showtecnhology'])->name('showtecnhology.index');
     Route::get('activos/muebles',[activosController::class,'showfurniture'])->name('showfurniture.index');

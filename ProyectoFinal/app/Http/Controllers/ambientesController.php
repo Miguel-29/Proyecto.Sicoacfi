@@ -28,4 +28,9 @@ class ambientesController extends Controller
         return redirect()->route('aulas.index')
         ->with('success','Aula actualizada con exito');;
     }
+    public function delete($id){
+        $environment=environment::find($id)->delete();
+        return redirect()->route('aulas.index')
+        ->with('danger', 'Activo fijo removido con exito');
+    }
 }
