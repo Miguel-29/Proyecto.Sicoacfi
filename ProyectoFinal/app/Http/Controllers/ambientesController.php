@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ambientesController extends Controller
 {
     public function index() {
-        $environment = environment::paginate(10);
+        $environment = environment::paginate(8);
         return view('aulas.index', compact('environment'));
     }
     public function create() {

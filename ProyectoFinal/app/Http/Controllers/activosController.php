@@ -18,19 +18,19 @@ class activosController extends Controller
             ->where('trademark','LIKE','%'.$search.'%')
             ->where('category','LIKE','%'.$showtechnology.'%')
             ->where('category','LIKE','%'.$showfurniture.'%')
-            ->paginate(10)
+            ->paginate(8)
         : $asset = asset::orderBy('trademark',$order)
             ->where('trademark','LIKE','%'.$search.'%')
             ->where('category','LIKE','%'.$showtechnology.'%')
             ->where('category','LIKE','%'.$showfurniture.'%')
-            ->paginate(10);
+            ->paginate(8);
         $environment = environment::all();
         $teacher = teacher::all();
         return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture'));
     }
     public function indexBajas() {        
         $asset=asset::onlyTrashed()
-            ->paginate(10);
+            ->paginate(8);
         return view('bajasActivos.index', compact('asset'));
     }
     public function create() {
