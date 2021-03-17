@@ -3,23 +3,23 @@
     Registrar aula
 @endsection
 @section('content')
-    <div class="container">
-        <div class="row">
+    <div  class="container">
+        <div  class="row">
             <div class="card text-center">
                 <div class="card-header">
-                    <h4>Registrar aula</h4>
+                    <h4>Registrar aula</h4>                    
                 </div>
                 <form action="{{route('aulas.store')}}" method="post">
                     @csrf
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name="code" id="code" placeholder="Codigo" autofocus required>
+                                <input type="number" class="form-control" name="code" id="code" placeholder="Codigo" autofocus >
                                 <label for="code">Codigo</label>
                             </div>
                             <div class="form-floating">
-                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso" required>
-                                    <option selected>Seleccione el piso</option>
+                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso">
+                                    <option value="" selected>Seleccione el piso</option>
                                     <option value="piso 1">Piso 1</option>
                                     <option value="piso 2">Piso 2</option>
                                     <option value="piso 3">Piso 3</option>
@@ -42,4 +42,16 @@
             </div>
         </div>
     </div>
+    <div style="display: none">
+    @if ($errors->any())
+        <div  class="alert alert-danger">
+            <ul id="dsa">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    </div>
 @endsection
+

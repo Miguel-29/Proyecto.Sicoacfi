@@ -39,6 +39,20 @@
 </div>
 
 <script src="{{ url('js/app.js')}}"></script>
+<script>
+    dsa = () => {
+        console.log(document)
+    }
+    asd = () => {
+        if(document.getElementById('dsa')){
+            let alerta = document.getElementById('dsa').textContent
+            alert(alerta)
+            console.log(alerta)
+            // alert(alerta)
+        }
+    };
+    asd();
+</script>
 
 {{--<script src="{{url('js/dashboard.js')}}"></script>--}}
 </body>

@@ -39,9 +39,9 @@ class activosController extends Controller
         return view('activos.create', compact('teacher','environment'));
     }
     public function store(Request $request) {
-        $asset = asset::create($request->all());
+        $asset = asset::create($request->all());         
         return redirect()->route('activos.index')
-        ->with('success','Activo fijo registrado con exito');;
+        ->with('success','Activo fijo registrado con exito');
     }
     public function edit($id) {
         $asset=asset::find($id);

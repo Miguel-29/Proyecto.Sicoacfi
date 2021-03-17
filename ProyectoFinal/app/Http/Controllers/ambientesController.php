@@ -15,16 +15,22 @@ class ambientesController extends Controller
         return view('aulas.create');
     }
     public function store(Request $request) {
-        $environment = environment::create($request->all());
+        $environment = environment::create($request->validate([
+            'code'=>'required|min:3|max:3',
+            'floor'=>'required'
+        ]));
         return redirect()->route('aulas.index')
-        ->with('success','Aula registrada con exito');;
+        ->with('success','Aula registrada con exito');
     }
     public function edit($id) {
         $environment = environment::find($id);
         return view('aulas.edit',compact('environment'));
     }
     public function update(Request $request,$id) {
-        $environment=environment::find($id)->update($request->all());
+        $environment=environment::find($id)->update($request->validate([
+            'code'=>'required|min:3|max:3',
+            'floor'=>'required'
+        ]));
         return redirect()->route('aulas.index')
         ->with('success','Aula actualizada con exito');;
     }
