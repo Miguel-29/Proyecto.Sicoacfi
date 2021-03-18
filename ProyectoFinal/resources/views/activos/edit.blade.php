@@ -52,7 +52,11 @@
                                         @if($asset->idenvironment == '')
                                             Sin asignar aula
                                         @else
-                                        
+                                        @foreach($environment as $environments)
+                                            @if($environments->id == $asset->idenvironment)
+                                                Aula asignada Cod: {{$environments->code}}, {{$environments->floor}} 
+                                            @endif
+                                        @endforeach
                                         @endif
                                     </option>
                                     @foreach($environment as $environments)
@@ -69,7 +73,13 @@
                                         @if($asset->idteacher == '')
                                             Sin asignar profesor
                                         @else
-
+                                        @foreach($teacher as $teachers)
+                                        @if($teachers->id == $asset->idteacher)
+                                            <td>
+                                                {{$teachers->name}} {{$teachers->lastnames}}, de {{$teachers->degree}}
+                                            </td>
+                                        @endif
+                                    @endforeach
                                         @endif
                                     </option>
                                     @foreach($teacher as $teachers)
