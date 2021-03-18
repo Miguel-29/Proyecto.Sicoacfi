@@ -7,7 +7,7 @@ use App\Models\asset;
 use App\Models\environment;
 use App\Models\teacher;
 
-use Barryvdh\DomPDF\Facade as PDF;
+use Barryvdh\DomPDF\Facade;
 
 class reporteController extends Controller
 {
