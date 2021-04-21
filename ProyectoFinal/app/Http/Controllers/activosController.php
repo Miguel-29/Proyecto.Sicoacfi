@@ -24,14 +24,17 @@ class activosController extends Controller
             ->where('category','LIKE','%'.$showtechnology.'%')
             ->where('category','LIKE','%'.$showfurniture.'%')
             ->paginate(8);
-        $environment = environment::all();
-        $teacher = teacher::all();
-        $profe = asset::all()
-            ->join('environments', 'assets.idenvironment','=','environments.id');
+        $teacher = teacher::select('teachers.id','teachers.name','teachers.lastnames')
+            ->join('assets','teachers.id','=','assets.idteacher')
+            ->get();
+        $environment = environment::select('environments.id','environments.code')
+            ->join('assets','environments.id','=','assets.idenvironment')
+            ->get();
+            // dd($teacher, $environment);
             // ->get();
             // return $profe
-        ;
-        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture','profe'));
+        $asd = 0;
+        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture','asd'));
     }
     public function indexBajas() {        
         $asset=asset::onlyTrashed()

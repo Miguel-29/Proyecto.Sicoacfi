@@ -22,9 +22,13 @@
                             <thead class="table-dark">
                             <tr>
                                 <th>
-                                    Marca
-                                    <a type="button" class="fas fa-sort-up" href="{{route('activos.index')}}" style="color: white; text-decoration: none" ></a>
-                                    <a type="button" class="fas fa-sort-down" href="{{route('activos.index',['OrderBy'=>'desc'])}}" style="color: white; text-decoration: none"></a>
+                                    <div style="display: flex">
+                                        Marca
+                                        <span style="display: flex; flex-direction: column; margin-left: 5px">
+                                            <a type="button" class="fas fa-sort-up" href="{{route('activos.index')}}" style="color: white; text-decoration: none; height: 7px" ></a>
+                                            <a type="button" class="fas fa-sort-down" href="{{route('activos.index',['OrderBy'=>'desc'])}}" style="color: white; text-decoration: none"></a>
+                                        </span>
+                                    </div>
                                 </th>
                                 <th>Color</th>
                                 <th>Referencia</th>
@@ -51,22 +55,26 @@
                                     @if ($assets->idenvironment == '')
                                         <td>Sin asignar</td>
                                     @else
+                                    {{$asd = 0}}
                                     @foreach($environment as $environments)
-                                        @if($environments->id == $assets->idenvironment)
+                                        @if($environments->id == $assets->idenvironment && $asd == 0)
                                             <td>
                                                 {{$environments->code}}
                                             </td>
+                                            {{$asd = 1}}
                                         @endif
                                     @endforeach
                                     @endif
                                     @if ($assets->idteacher == '')
                                         <td>Sin asignar</td>
                                     @else
+                                    {{$asd = 0}}
                                     @foreach($teacher as $teachers)
-                                        @if($teachers->id == $assets->idteacher)
+                                        @if($teachers->id == $assets->idteacher && $asd == 0)
                                             <td>
                                                 {{$teachers->name}} {{$teachers->lastnames}}
-                                            </td>
+                                            </td>       
+                                            {{$asd = 1}}                                     
                                         @endif
                                     @endforeach
                                     @endif
@@ -95,7 +103,6 @@
                         </div>
                     </div>
                 </div>
-                    <p>{{$profe}}</p>
             </div>
         </div>
     </div>

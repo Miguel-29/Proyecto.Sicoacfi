@@ -52,8 +52,25 @@
         }
     };
     asd();
+    let envio = document.getElementById('envio');
+    let elementos = document.querySelectorAll("[required]")
+    let num = 0;
+    sumar = () => {
+        console.log(elementos)
+        console.log(envio)
+        for (let index = 0; index < elementos.length; index++) {
+            if(elementos[index].value !== "") {
+                num += 1;
+            };
+        }
+        if (num == elementos.length){
+            envio.disabled = false;
+        } else {
+            num = 0;
+            envio.disabled = true;
+        }
+    }
 </script>
-
 {{--<script src="{{url('js/dashboard.js')}}"></script>--}}
 </body>
 </html>

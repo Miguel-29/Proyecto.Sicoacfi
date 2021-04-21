@@ -14,11 +14,11 @@
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name="code" id="code" placeholder="Codigo" autofocus >
+                                <input type="number" class="form-control" name="code" id="code" placeholder="Codigo" onchange="sumar()" autofocus required>
                                 <label for="code">Codigo</label>
                             </div>
                             <div class="form-floating">
-                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso">
+                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso" onchange="sumar()" required>
                                     <option value="" selected>Seleccione el piso</option>
                                     <option value="piso 1">Piso 1</option>
                                     <option value="piso 2">Piso 2</option>
@@ -32,10 +32,10 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn btn-success " id="envio" disabled>
                             <span><i class="fas fa-folder-plus"></i>  Guardar</span>
                         </button>
-                        <button type="reset" class="btn btn-warning"><i class="fas fa-redo-alt"></i></button>
+                        <button type="reset" class="btn btn-warning "><i class="fas fa-redo-alt"></i></button>
                         <a type="button" href="{{route('aulas.index')}}" class="btn btn-danger">X</a>
                     </div>
                 </form>

@@ -11,22 +11,22 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <form action="{{route('activos.store')}}" method="post" class="offset-lg-3 col-lg-6">
+                        <form action="{{route('activos.store')}}" method="post" class="offset-lg-3 col-lg-6" onformchange="consolse()">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="trademark" name="trademark" placeholder="Marca" autofocus required>
+                                <input type="text" class="form-control" id="trademark" name="trademark" placeholder="Marca" autofocus onchange="sumar()" required>
                                 <label for="trademark">Marca</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" id="serial_number" name="serial_number" placeholder="serial" required>
+                                <input type="number" class="form-control" id="serial_number" name="serial_number" placeholder="serial" onchange="sumar()" required>
                                 <label for="serial_number">Numero de serial</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="reference" name="reference" placeholder="referencia" required>
+                                <input type="text" class="form-control" id="reference" name="reference" placeholder="referencia" onchange="sumar()" required>
                                 <label for="reference">Referencia</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" required>
+                                <input type="date" class="form-control" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" onchange="sumar()" required>
                                 <label for="date_admission">Fecha de ingreso</label>
                             </div>
                             <div class="form-floating mb-3">
@@ -38,15 +38,15 @@
                                 <label for="color">Color</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="category" name="category" aria-label="Floating label select" required>
-                                    <option selected>Categorias</option>
+                                <select class="form-select" id="category" name="category" aria-label="Floating label select" onchange="sumar()" required>
+                                    <option selected value="">Categorias</option>
                                     <option value="tecnologia">Tecnologia</option>
                                     <option value="muebles">Muebles</option>
                                 </select>
                                 <label for="floatingSelect">Seleccionar categoria</label>
                             </div>
                             <div class="form-floating mb-3 ">
-                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula">
+                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula" onchange="sumar()" required>
                                     <option selected value="">Sin asignar aula</option>
                                     @foreach($environment as $environments)
                                         <option value="{{$environments->id}}">
@@ -57,7 +57,7 @@
                                 <label for="floatingSelect">Seleccione aula</label>
                             </div>
                             <div class="form-floating ">
-                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor">
+                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor" onchange="sumar()" required>
                                     <option selected value="">Sin asignar profesor</option>
                                     @foreach($teacher as $teachers)
                                         <option value="{{$teachers->id}}">
@@ -67,7 +67,7 @@
                                 </select>
                                 <label for="floatingSelect">Seleccione profesor</label>
                             </div>
-                            <button type="submit" class="btn btn-success">
+                            <button type="submit" id="envio" class="btn btn-success" disabled>
                                 <span><i class="fas fa-folder-plus"></i>  Guardar</span>
                             </button>
                             <button type="reset" class="btn btn-warning"><i class="fas fa-redo-alt"></i></button>
@@ -79,4 +79,6 @@
             </div>
         </div>
     </div>
+    
 @endsection
+
