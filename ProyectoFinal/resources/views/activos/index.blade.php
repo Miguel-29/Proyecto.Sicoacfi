@@ -95,6 +95,7 @@
                         </div>
                     </div>
                 </div>
+                    <p>{{$profe}}</p>
             </div>
         </div>
     </div>

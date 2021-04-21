@@ -26,7 +26,12 @@ class activosController extends Controller
             ->paginate(8);
         $environment = environment::all();
         $teacher = teacher::all();
-        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture'));
+        $profe = asset::all()
+            ->join('environments', 'assets.idenvironment','=','environments.id');
+            // ->get();
+            // return $profe
+        ;
+        return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture','profe'));
     }
     public function indexBajas() {        
         $asset=asset::onlyTrashed()
