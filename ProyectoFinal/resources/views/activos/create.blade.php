@@ -46,7 +46,7 @@
                                 <label for="floatingSelect">Seleccionar categoria</label>
                             </div>
                             <div class="form-floating mb-3 ">
-                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula" onchange="sumar()" required>
+                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula" onchange="sumar()">
                                     <option selected value="">Sin asignar aula</option>
                                     @foreach($environment as $environments)
                                         <option value="{{$environments->id}}">
@@ -57,7 +57,7 @@
                                 <label for="floatingSelect">Seleccione aula</label>
                             </div>
                             <div class="form-floating ">
-                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor" onchange="sumar()" required>
+                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor" onchange="sumar()">
                                     <option selected value="">Sin asignar profesor</option>
                                     @foreach($teacher as $teachers)
                                         <option value="{{$teachers->id}}">

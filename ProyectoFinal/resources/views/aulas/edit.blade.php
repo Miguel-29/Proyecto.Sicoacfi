@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn btn-success" id="envio" disabled>
                             <span><i class="fas fa-folder-plus"></i> Actualizar</span>
                         </button>
                         <button type="reset" class="btn btn-warning"><i class="fas fa-redo-alt"></i></button>
