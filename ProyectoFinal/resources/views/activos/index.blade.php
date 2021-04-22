@@ -52,29 +52,29 @@
                                     <td>{{$assets->category}}</td>
                                     <td>{{$assets->date_admission}}</td>
                                     <td>{{$assets->maintenance}}</td>
-                                    @if ($assets->idenvironment == '')
+                                    @if ($assets->idenvironment == null)
                                         <td>Sin asignar</td>
                                     @else
-                                    {{$asd = 0}}
+                                    {{-- {{$asd = 0}} --}}
                                     @foreach($environment as $environments)
-                                        @if($environments->id == $assets->idenvironment && $asd == 0)
+                                        @if($environments->id == $assets->idenvironment)
                                             <td>
                                                 {{$environments->code}}
                                             </td>
-                                            {{$asd = 1}}
+                                            @break
                                         @endif
                                     @endforeach
                                     @endif
-                                    @if ($assets->idteacher == '')
+                                    @if ($assets->idteacher == null)
                                         <td>Sin asignar</td>
                                     @else
-                                    {{$asd = 0}}
+                                    {{-- {{$asd = 0}} --}}
                                     @foreach($teacher as $teachers)
                                         @if($teachers->id == $assets->idteacher && $asd == 0)
                                             <td>
                                                 {{$teachers->name}} {{$teachers->lastnames}}
                                             </td>       
-                                            {{$asd = 1}}                                     
+                                            @break                                    
                                         @endif
                                     @endforeach
                                     @endif
