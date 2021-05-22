@@ -1,6 +1,6 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
     <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
+        <ul class="nav flex-column sidebara">
             <li class="nav-item">
                 <a class="nav-link " href="/">
                     <span>
@@ -26,13 +26,13 @@
                 </a>
             </li>
             <li class="nav-item btn-group dropend">
-                <a type="button" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="true">
+                <a type="button" class="nav-link dropdown-toggle w-100" data-bs-toggle="dropdown" aria-expanded="true">
                     <span>
                         <i class="btn fas fa-sitemap" style="width: 45px"></i>
                     </span>
                     Categorias
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu categorias">
                     <li>
                         <a class="btn nav-link" href="{{route('activos.index',['showtechnology'=>'tecnologia'])}}">
                             
