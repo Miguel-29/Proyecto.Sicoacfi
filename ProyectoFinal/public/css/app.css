@@ -15338,3 +15338,36 @@ body {
     font-family: "Font Awesome 5 Pro";
     font-weight: 900
 }
+
+/* fin bootstrap */
+
+/* hoja propia */
+
+.sidebara .nav-item:hover,
+.dropdown-menu li:hover{
+    background-color: #c4c4c4;
+}
+.dropdown-menu{
+    padding: 0;
+}
+@media (max-width: 768px) { 
+    .categorias{
+        transform: translateX(-100%);
+        right: 0px;
+    }
+}
+.categorias li{
+    height: 46px;
+}
+.form-error input{
+    border: 1px solid red !important;
+}
+.form-error input:focus{
+    box-shadow: 0 0 0 0.25rem rgba(253 13 13 / 25%) !important;
+}
+.empty{
+    border: 1px solid red !important;
+}
+.empty:focus{
+    box-shadow: 0 0 0 0.25rem rgba(253 13 13 / 25%) !important;
+}

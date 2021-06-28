@@ -20,8 +20,8 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{url('css/app.css')}}" />
     <link rel="stylesheet" href="{{url('css/style.css')}}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
 
 </head>
 <body>
@@ -40,19 +40,9 @@
 </div>
 
 <script src="{{ url('js/app.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
-    dsa = () => {
-        console.log(document)
-    }
-    asd = () => {
-        if(document.getElementById('dsa')){
-            let alerta = document.getElementById('dsa').textContent
-            alert(alerta)
-            console.log(alerta)
-            // alert(alerta)
-        }
-    };
-    asd();
     let envio = document.getElementById('envio');
     let elementos = document.querySelectorAll("[required]")
     let num = 0;
@@ -71,6 +61,10 @@
             envio.disabled = true;
         }
     }
+    pasarId = (id) =>{
+        document.getElementById("myModal")
+    }
+    document.addEventListener("DOMContentLoaded", function(){sumar()});
 </script>
 {{--<script src="{{url('js/dashboard.js')}}"></script>--}}
 </body>

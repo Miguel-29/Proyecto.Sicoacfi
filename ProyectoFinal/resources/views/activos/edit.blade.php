@@ -15,39 +15,60 @@
                             @csrf
                             @method('PUT')
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$asset->trademark}}" id="trademark" name="trademark" placeholder="Marca" autofocus required>
+                                <input type="text" class="form-control @error('trademark') empty @enderror" value="{{$asset->trademark}}" id="trademark" name="trademark" placeholder="Marca" onchange="sumar()" autofocus required>
                                 <label for="trademark">Marca</label>
+                                @error('trademark')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" value="{{$asset->serial_number}}" id="serial_number" name="serial_number" placeholder="Serial" required>
+                                <input type="number" class="form-control @error('serial_number') empty @enderror" value="{{$asset->serial_number}}" id="serial_number" name="serial_number" placeholder="Serial" onchange="sumar()" required>
                                 <label for="serial_number">Numero de serial</label>
+                                @error('serial_number')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$asset->reference}}" id="reference" name="reference" placeholder="Referencia" required>
+                                <input type="text" class="form-control @error('reference') empty @enderror" value="{{$asset->reference}}" id="reference" name="reference" placeholder="Referencia" onchange="sumar()" required>
                                 <label for="reference">Referencia</label>
+                                @error('reference')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$asset->date_admission}}" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" required>
+                                <input type="date" class="form-control @error('date_admission') empty @enderror" value="{{$asset->date_admission}}" id="date_admission" name="date_admission" placeholder="Fecha de ingreso" onchange="sumar()" required>
                                 <label for="date_admission">Fecha de ingreso</label>
+                                @error('date_admission')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" value="{{$asset->maintenance}}" id="maintenance" name="maintenance" placeholder="Mantenimiento">
+                                <input type="date" class="form-control @error('maintenance') empty @enderror" value="{{$asset->maintenance}}" id="maintenance" name="maintenance" placeholder="Mantenimiento">
                                 <label for="maintenance">Fecha de mantenimiento</label>
+                                @error('maintenance')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" value="{{$asset->color}}" id="color" name="color" placeholder="color">
+                                <input type="text" class="form-control @error('color') empty @enderror" value="{{$asset->color}}" id="color" name="color" placeholder="color" onchange="sumar()" required>
                                 <label for="color">Color</label>
+                                 @error('color')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <select class="form-select" id="category" name="category" aria-label="Floating label select example" required>
+                                <select class="form-select @error('category') empty @enderror" id="category" name="category" aria-label="Floating label select example" onchange="sumar()" required>
                                     <option selected>{{$asset->category}}</option>
                                     <option value="technology">Tecnologia</option>
                                     <option value="furniture">Muebles</option>
                                 </select>
                                 <label for="floatingSelect">Seleccione categoria</label>
+                                @error('category')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3 ">
-                                <select name="idenvironment" id="idenvironment" class="form-select"aria-label="seleccionar aula">
+                                <select name="idenvironment" id="idenvironment" class="form-select @error('idenvironment') empty @enderror"aria-label="seleccionar aula">
                                     <option selected value="">
                                         @if($asset->idenvironment == '')
                                             Sin asignar aula
@@ -68,7 +89,7 @@
                                 <label for="floatingSelect">Seleccione aula</label>
                             </div>
                             <div class="form-floating ">
-                                <select name="idteacher" id="idteacher" class="form-select" aria-label="seleccionar profesor">
+                                <select name="idteacher" id="idteacher" class="form-select @error('idteacher') empty @enderror" aria-label="seleccionar profesor">
                                     <option selected value="">
                                         @if($asset->idteacher == '')
                                             Sin asignar profesor

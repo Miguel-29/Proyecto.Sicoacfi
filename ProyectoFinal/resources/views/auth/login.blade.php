@@ -24,12 +24,13 @@
                         <h5>¡Bienvenido a</h5>
                         <h3>SICOACFI!</h3>
                     </div>
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" @if ($errors->any()) class="form-error" @endif>
                         @csrf
                         <div class="card-body">
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="Email" required autofocus/>
                                 <label for="email">Email</label>
+                                <x-alert/>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required/>

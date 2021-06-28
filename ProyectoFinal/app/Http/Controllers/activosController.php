@@ -47,6 +47,17 @@ class activosController extends Controller
         return view('activos.create', compact('teacher','environment'));
     }
     public function store(Request $request) {
+        $request->validate([
+            'trademark' => 'required',
+            'serial_number' => 'required',            
+            'reference' => 'required',            
+            'date_admission' => 'required|date',            
+            'maintenance' => 'nullable|date',            
+            'color' => 'required|string',
+            'category' => 'required',
+            'idenvironment' => 'nullable|numeric',
+            'idteacher' => 'nullable|numeric',
+        ]);
         $asset = asset::create($request->all());         
         return redirect()->route('activos.index')
         ->with('success','Activo fijo registrado con exito');
@@ -58,6 +69,17 @@ class activosController extends Controller
         return view('activos.edit',compact('environment','teacher','asset'));
     }
     public function update(Request $request,$id) {
+        $request->validate([
+            'trademark' => 'required',
+            'serial_number' => 'required',            
+            'reference' => 'required',            
+            'date_admission' => 'required|date',            
+            'maintenance' => 'nullable|date',            
+            'color' => 'required|string',
+            'category' => 'required',
+            'idenvironment' => 'nullable|numeric',
+            'idteacher' => 'nullable|numeric',
+        ]);
         $asset=asset::find($id)->update($request->all());
         return redirect()->route('activos.index')
         ->with('success','Activo fijo actualizado con exito');;

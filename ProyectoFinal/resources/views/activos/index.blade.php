@@ -81,14 +81,18 @@
                                     <td>
                                         <a href="{{route('activos.edit',$assets->id)}}">Lapiz</a>
                                     </td>
-                                    <td>
-                                        <form action="{{route('activos.delete',$assets->id)}}" method="post">
+                                    <td>                                        
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}" onclick="pasarId({{$assets->id}})">                                            
+                                            <i class="fas fa-ban"></i>
+                                        </button>
+                                        @include('component.modal')
+                                        {{-- <form action="{{route('activos.delete',$assets->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn btn-danger" type="submit">
                                                 <i class="fas fa-ban"></i>
                                             </button>
-                                        </form>
+                                        </form> --}}
                                     </td>
                                 </tr>
                                 @endforeach
@@ -96,7 +100,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="card-footer ">
+                <div class="card-footer">
                     <div class="offset-4 offset-sm-5">
                         <div class="offset-sm-1">
                             {{$asset->appends(['search' => $search, 'OrderBy' => $order, 'showtechnology' => $showtechnology, 'showfurniture' => $showfurniture])->links('pagination::bootstrap-4')}}

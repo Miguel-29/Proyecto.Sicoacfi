@@ -25,6 +25,7 @@ mix.scripts([
         'resources/Template/js/Chart.min.j',
         'resources/Template/js/dashboard.js',
         'resources/Template/js/feather.js',
+        'resources/Template/js/jquery.js',
     ],'public/js/app.js')
 
     .styles([
