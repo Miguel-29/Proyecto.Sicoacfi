@@ -14,11 +14,14 @@
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name="code" id="code" placeholder="Codigo" onchange="sumar()" autofocus required>
+                                <input value="{{ old('code')}}" type="number" class="form-control @error('code') empty @enderror" name="code" id="code" placeholder="Codigo" onchange="sumar()" autofocus required>
                                 <label for="code">Codigo</label>
+                                @error('code')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating">
-                                <select class="form-select" name="floor" id="floor" aria-label="seleccione piso" onchange="sumar()" required>
+                                <select class="form-select @error('floor') empty @enderror" name="floor" id="floor" aria-label="seleccione piso" onchange="sumar()" required>
                                     <option value="" selected>Seleccione el piso</option>
                                     <option value="piso 1">Piso 1</option>
                                     <option value="piso 2">Piso 2</option>
@@ -28,6 +31,9 @@
                                     <option value="piso 6">Piso 6</option>
                                 </select>
                                 <label for="floatingSelect">Seleccione el piso</label>
+                                @error('floor')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>

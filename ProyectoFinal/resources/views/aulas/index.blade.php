@@ -30,9 +30,16 @@
                                 <td>{{$environments->code}}</td>
                                 <td>{{$environments->floor}}</td>
                                 <td>
-                                    <a href="{{route('aulas.edit',$environments->id)}}">Lapiz</a>
+                                    <a class="btn btn-warning" href="{{route('aulas.edit',$environments->id)}}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>  
                                 </td>
-                                <td>X</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$environments->id}}">                                            
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    @include('component.modal')
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -40,10 +47,8 @@
                     </div>
                 </div>
                 <div class="card-footer ">
-                    <div class="offset-4 offset-sm-5">
-                        <div class="offset-sm-1">
-                            {{$environment->links('pagination::bootstrap-4')}}
-                        </div>
+                    <div class="d-flex justify-content-center">
+                        {{$environment->links('pagination::bootstrap-4')}}
                     </div>
                 </div>
             </div>

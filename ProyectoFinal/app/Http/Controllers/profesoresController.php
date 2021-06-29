@@ -16,16 +16,27 @@ class ProfesoresController extends Controller
         return view('profesores.create');
     }
     public function store(Request $request) {
+        $request->validate([
+            'name'=>'required|string',
+            'lastnames'=>'required|string',
+            'degree'=>'required|string',
+            'document'=>'required|number|min:7'
+        ]);
         $teacher=teacher::create($request->all());
         return redirect()->route('profesores.index')
         ->with('success','Profesor registrado con exito');
     }
     public function edit($id) {
         $teacher = teacher::find($id);
-        Log::info('hola');
         return view('profesores.edit',compact('teacher'));
     }
     public function update(Request $request,$id) {
+        $request->validate([
+            'name'=>'required|string',
+            'lastnames'=>'required|string',
+            'degree'=>'required|string',
+            'document'=>'required|number|min:7'
+        ]);
         $teacher=teacher::find($id)->update($request->all());
         return redirect()->route('profesores.index')
         ->with('success','Profesor actualizado con exito');;

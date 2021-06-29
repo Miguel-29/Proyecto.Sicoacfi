@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\environment;
+use App\Models\asset;
 use Illuminate\Http\Request;
 
 class ambientesController extends Controller
@@ -15,10 +16,11 @@ class ambientesController extends Controller
         return view('aulas.create');
     }
     public function store(Request $request) {
-        $environment = environment::create($request->validate([
-            'code'=>'required|min:3|max:3',
+        $request->validate([
+            'code'=>'required|min:100|numeric',
             'floor'=>'required'
-        ]));
+        ]);
+        $environment=environment::create($request->all());
         return redirect()->route('aulas.index')
         ->with('success','Aula registrada con exito');
     }
@@ -27,10 +29,11 @@ class ambientesController extends Controller
         return view('aulas.edit',compact('environment'));
     }
     public function update(Request $request,$id) {
-        $environment=environment::find($id)->update($request->validate([
-            'code'=>'required|min:3|max:3',
+        $request->validate([
+            'code'=>'required|min:100|numeric',
             'floor'=>'required'
-        ]));
+        ]);
+        $environment= environment::find($id)->update($request->all());
         return redirect()->route('aulas.index')
         ->with('success','Aula actualizada con exito');;
     }

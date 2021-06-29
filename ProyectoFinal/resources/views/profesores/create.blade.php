@@ -14,20 +14,32 @@
                     <div class="card-body">
                         <div class="row offset-sm-3 col-sm-6">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="name" id="name" placeholder="Nombre" onchange="sumar()" required>
+                                <input value="{{ old('name')}}" type="text" class="form-control @error('name') empty @enderror" name="name" id="name" placeholder="Nombre" onchange="sumar()" required>
                                 <label for="name">nombre</label>
+                                @error('name')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name="lastnames" id="lastnames" placeholder="Apellidos" onchange="sumar()" required>
+                                <input value="{{ old('lastnames')}}" type="text" class="form-control @error('lastnames') empty @enderror" name="lastnames" id="lastnames" placeholder="Apellidos" onchange="sumar()" required>
                                 <label for="lastnames">apellido</label>
+                                @error('lastnames')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" name='degree' id="degree" placeholder="Licenciatura" onchange="sumar()" required>
+                                <input value="{{ old('degree')}}" type="text" class="form-control @error('degree') empty @enderror" name='degree' id="degree" placeholder="Licenciatura" onchange="sumar()" required>
                                 <label for="degree">licenciatura</label>
+                                @error('degree')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="number" class="form-control" name='document' id="document" placeholder="Documento" onchange="sumar()" required>
+                                <input value="{{ old('document')}}" type="number" class="form-control @error('document') empty @enderror" name='document' id="document" placeholder="Documento" onchange="sumar()" required>
                                 <label for="document">documento</label>
+                                @error('document')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>

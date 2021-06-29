@@ -30,9 +30,7 @@ class activosController extends Controller
         $environment = environment::select('environments.id','environments.code')
             ->join('assets','environments.id','=','assets.idenvironment')
             ->get();
-            // dd($teacher, $environment);
-            // ->get();
-            // return $profe
+        // dd($environment);
         $asd = 0;
         return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture','asd'));
     }
@@ -84,7 +82,15 @@ class activosController extends Controller
         return redirect()->route('activos.index')
         ->with('success','Activo fijo actualizado con exito');;
     }
-    public function delete($id){
+    public function updates(Request $request,$id) {
+        $asset = asset::where('idenvironment','LIKE','%'.$id.'%')->update([
+            'idenvironment' => 1
+        ]);
+        return redirect()->route('aulas.delete',$id);
+        // $asset=asset::find($id)->update($request->all());
+        // return redirect()->route('aulas.delete');
+    }
+    public function delete($id){        
         $asset=asset::find($id)->delete();
         return redirect()->route('activos.index')
         ->with('danger', 'Activo fijo removido con exito');

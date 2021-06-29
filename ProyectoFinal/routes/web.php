@@ -32,6 +32,7 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::post('activos',[activosController::class,'store'])->name('activos.store');
     Route::get('activos/edit/{id}',[activosController::class,'edit'])->name('activos.edit');
     Route::put('activos{id}',[activosController::class,'update'])->name('activos.update');
+    Route::put('activos/asset/{id}',[activosController::class,'updates'])->name('activos.updates');
     Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
 
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');

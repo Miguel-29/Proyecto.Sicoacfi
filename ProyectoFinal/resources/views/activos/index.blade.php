@@ -79,20 +79,15 @@
                                     @endforeach
                                     @endif
                                     <td>
-                                        <a href="{{route('activos.edit',$assets->id)}}">Lapiz</a>
+                                        <a class="btn btn-warning" href="{{route('activos.edit',$assets->id)}}">
+                                            <i class="fas fa-edit"></i>
+                                        </a> 
                                     </td>
                                     <td>                                        
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}" onclick="pasarId({{$assets->id}})">                                            
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}">                                            
                                             <i class="fas fa-ban"></i>
                                         </button>
                                         @include('component.modal')
-                                        {{-- <form action="{{route('activos.delete',$assets->id)}}" method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">
-                                                <i class="fas fa-ban"></i>
-                                            </button>
-                                        </form> --}}
                                     </td>
                                 </tr>
                                 @endforeach

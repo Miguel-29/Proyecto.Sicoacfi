@@ -36,8 +36,15 @@
                                 <td>{{$activo->category}}</td>
                                 <td>{{$activo->date_admission}}</td>
                                 <td>{{$activo->maintenance}}</td>
-                                <td></td>
                                 <td>
+                                    <a class="btn btn-success">
+                                        <i class="fas fa-trash-restore"></i>
+                                    </a>                                    
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>                                   
                                     {{-- <form action="{{route('bajasActivos.delete',$activo->id)}}" method="post">
                                         @method('DELETE')
                                         @csrf

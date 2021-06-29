@@ -34,9 +34,16 @@
                                 <td>{{$teachers->degree}}</td>
                                 <td>{{$teachers->document}}</td>
                                 <td>
-                                    <a href="{{route('profesores.edit',$teachers->id)}}">Lapiz</a>   
+                                    <a class="btn btn-warning" href="{{route('profesores.edit',$teachers->id)}}">
+                                        <i class="fas fa-edit"></i>
+                                    </a>   
                                 </td>
-                                <td>X</td>
+                                <td>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$teachers->id}}">                                            
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    @include('component.modal')
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
