@@ -28,13 +28,15 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
         return view('index');
     });
     Route::get('activos',[activosController::class,'index'])->name('activos.index');
+    Route::get('activos/key/{id}',[activosController::class,'indexKey'])->name('activosKey.index');
     Route::get('activos/create',[activosController::class,'create'])->name('activos.create');
     Route::post('activos',[activosController::class,'store'])->name('activos.store');
     Route::get('activos/edit/{id}',[activosController::class,'edit'])->name('activos.edit');
     Route::put('activos{id}',[activosController::class,'update'])->name('activos.update');
-    Route::put('activos/asset/{id}',[activosController::class,'updates'])->name('activos.updates');
+    Route::put('activos/environ/{id}',[activosController::class,'updateEnviro'])->name('activos.updateEnviro');
+    Route::put('activos/teacher/{id}',[activosController::class,'updateTeacher'])->name('activos.updateTeacher');
     Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
-
+    
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');
     // Route::delete('activos/{id}',[activosController::Class,'deletes'])->name('bajasActivos.delete');
 

@@ -25,8 +25,14 @@
 
 </head>
 <body>
+    <div id="bg-content">
+        <div class="content-carga"></div>
+        <div class="carga"></div>
+        <div class="uno"></div>
+        <div class="dos"></div>
+        <div class="tres"></div>
+    </div>
 @include('component.navbar')
-
 <div class="container-fluid">
     <div class="row">
         @include('component.sidebar')
@@ -42,7 +48,7 @@
 <script src="{{ url('js/app.js')}}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
+<script>    
     let envio = document.getElementById('envio');
     let elementos = document.querySelectorAll("[required]")
     let num = 0;

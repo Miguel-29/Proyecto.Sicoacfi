@@ -1,5 +1,5 @@
 <header class="navbar navbar-dark bg-dark sticky-top flex-md-nowrap shadow px-3">
-    <a class="navbar-brand col-md-3 col-lg-2 bg-dark me-0 fs-5">
+    <a href="/" class="navbar-brand col-md-3 col-lg-2 bg-dark me-0 fs-5">
         <img src="{{asset('/images/Logo4.png')}}" width="40" height="40">
         SICOACFI
     </a>
@@ -11,7 +11,7 @@
             <a type="button" class="btn btn-dark " href="/">INICIO</a>
         </li>
         <li class="nav-item text-nowrap px-3">
-            <a type="button" class="btn btn-dark" href="#">SOPORTE TECNICO</a>
+            <button type="button" class="btn btn-dark">SOPORTE TECNICO</button>
         </li>
         <li class="nav-item text-nowrap">
             <form action="logout" method="post">

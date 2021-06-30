@@ -22,7 +22,7 @@
                 <p>¿Esta seguro que quiere eliminar esta aula?</p>
             </div>
             <div class="modal-footer">
-                <form action="{{route('activos.updates',$environments->id)}}" method="post">
+                <form action="{{route('activos.updateEnviro',$environments->id,$environments)}}" method="post">
                     @csrf
                     @method('PUT')
                     <button class="btn btn-danger" type="submit">
@@ -34,8 +34,14 @@
                 <p>¿Esta seguro que quiere eliminar este profesor?</p>
             </div>
             <div class="modal-footer">
-        @endif
-            
+                <form action="{{route('activos.updateTeacher',$teachers->id,$teachers)}}" method="post">
+                    @csrf
+                    @method('PUT')
+                    <button class="btn btn-danger" type="submit">
+                        Confirmar
+                    </button>
+                </form>
+        @endif            
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
         </div>
     </div>

@@ -34,6 +34,9 @@ class activosController extends Controller
         $asd = 0;
         return view('activos.index', compact('asset','teacher','environment','order','search','showtechnology','showfurniture','asd'));
     }
+    public function indexKey($id) {        
+        return view('activos.key', compact('id'));
+    }
     public function indexBajas() {        
         $asset=asset::onlyTrashed()
             ->paginate(8);
@@ -82,13 +85,19 @@ class activosController extends Controller
         return redirect()->route('activos.index')
         ->with('success','Activo fijo actualizado con exito');;
     }
-    public function updates(Request $request,$id) {
+    public function updateEnviro(Request $request,$id) {
+        $tipo = "environment";
         $asset = asset::where('idenvironment','LIKE','%'.$id.'%')->update([
             'idenvironment' => 1
         ]);
-        return redirect()->route('aulas.delete',$id);
-        // $asset=asset::find($id)->update($request->all());
-        // return redirect()->route('aulas.delete');
+        return view('activos.key', compact('id','tipo'));
+    }
+    public function updateTeacher(Request $request,$id) {
+        $tipo = "asset";
+        $asset = asset::where('idenvironment','LIKE','%'.$id.'%')->update([
+            'idteacher' => 1
+        ]);
+        return view('activos.key', compact('id','tipo'));
     }
     public function delete($id){        
         $asset=asset::find($id)->delete();

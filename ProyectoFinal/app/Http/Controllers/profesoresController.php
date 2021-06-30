@@ -20,7 +20,7 @@ class ProfesoresController extends Controller
             'name'=>'required|string',
             'lastnames'=>'required|string',
             'degree'=>'required|string',
-            'document'=>'required|number|min:7'
+            'document'=>'required|numeric|min:7'
         ]);
         $teacher=teacher::create($request->all());
         return redirect()->route('profesores.index')
@@ -35,10 +35,15 @@ class ProfesoresController extends Controller
             'name'=>'required|string',
             'lastnames'=>'required|string',
             'degree'=>'required|string',
-            'document'=>'required|number|min:7'
+            'document'=>'required|numeric|min:7'
         ]);
         $teacher=teacher::find($id)->update($request->all());
         return redirect()->route('profesores.index')
         ->with('success','Profesor actualizado con exito');;
+    }
+    public function delete($id){
+        $teacher=teacher::find($id)->delete();
+        return redirect()->route('profesores.index')
+        ->with('danger', 'Profesor eliminado con exito');
     }
 }

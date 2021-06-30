@@ -12,7 +12,7 @@
 */
 
 return [
-    'failed'   => 'Esta cuentas no se encuentra en nuestros registros.',
+    'failed'   => 'Esta cuenta no se encuentra en nuestros registros.',
     'password' => 'La contraseña ingresada no es correcta.',
     'throttle' => 'Demasiados intentos de acceso. Por favor intente nuevamente en :seconds segundos.',
 ];

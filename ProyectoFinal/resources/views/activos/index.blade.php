@@ -79,12 +79,12 @@
                                     @endforeach
                                     @endif
                                     <td>
-                                        <a class="btn btn-warning" href="{{route('activos.edit',$assets->id)}}">
+                                        <a onclick="asdasd()" class="btn btn-warning" href="{{route('activos.edit',$assets->id)}}">
                                             <i class="fas fa-edit"></i>
                                         </a> 
                                     </td>
                                     <td>                                        
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}">                                            
+                                        <button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}">                                            
                                             <i class="fas fa-ban"></i>
                                         </button>
                                         @include('component.modal')
