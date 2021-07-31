@@ -38,6 +38,7 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
     
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');
+    Route::get('activos/restaurar/{id}',[activosController::class,'restoreAsset'])->name('bajasActivos.restore');
     // Route::delete('activos/{id}',[activosController::Class,'deletes'])->name('bajasActivos.delete');
 
     Route::get('profesores',[ProfesoresController::class,'index'])->name('profesores.index');
