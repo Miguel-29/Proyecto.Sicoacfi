@@ -104,4 +104,9 @@ class activosController extends Controller
         return redirect()->route('activos.index')
         ->with('danger', 'Activo fijo removido con exito');
     }
+    public function restoreAsset($id){ 
+        $asset=asset::find($id)->restore();
+        return redirect()->route('activos.index')
+        ->with('success', 'Activo fijo restaurado');
+    }
 }

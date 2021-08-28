@@ -37,21 +37,18 @@
                                 <td>{{$activo->date_admission}}</td>
                                 <td>{{$activo->maintenance}}</td>
                                 <td>
-                                    <a class="btn btn-success">
-                                        <i class="fas fa-trash-restore"></i>
-                                    </a>                                    
+                                    <form action="{{route('bajasActivos.restore',$activo->id)}}" method="post">
+                                        @method('PUT')
+                                        @csrf
+                                        <button type="submit" class="btn btn-success">
+                                            <span><i class="fas fa-trash-restore"></i> Actualizar</span>
+                                        </button>
+                                    </form>                              
                                 </td>
                                 <td>
                                     <a class="btn btn-danger">
                                         <i class="fas fa-trash-alt"></i>
                                     </a>                                   
-                                    {{-- <form action="{{route('bajasActivos.delete',$activo->id)}}" method="post">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class="btn btn-danger"type="submit">
-                                            <i class="fas fa-ban"></i>
-                                        </button>
-                                    </form> --}}
                                 </td>
                             </tr>
                         @endforeach
