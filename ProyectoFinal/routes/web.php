@@ -27,6 +27,7 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::get('/', function () {
         return view('index');
     })->name('home');
+    Route::get('logout')->name('logout');
     // Route::get('/',[activosController::class,'index'])->name('activos.index');
 
     Route::get('activos',[activosController::class,'index'])->name('activos.index');

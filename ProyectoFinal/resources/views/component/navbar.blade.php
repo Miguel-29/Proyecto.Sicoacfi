@@ -14,7 +14,7 @@
             <button type="button" class="btn btn-dark">SOPORTE TECNICO</button>
         </li>
         <li class="nav-item text-nowrap">
-            <form action="logout" method="post">
+            <form action="{{route('logout')}}" method="post">
                 @csrf
                 <button class="btn btn-dark"type="submit">CERRAR SESION</button>
             </form>
