@@ -26,7 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::get('/', function () {
         return view('index');
-    });
+    })->name('home');
+    // Route::get('/',[activosController::class,'index'])->name('activos.index');
+
     Route::get('activos',[activosController::class,'index'])->name('activos.index');
     Route::get('activos/key/{id}',[activosController::class,'indexKey'])->name('activosKey.index');
     Route::get('activos/create',[activosController::class,'create'])->name('activos.create');
