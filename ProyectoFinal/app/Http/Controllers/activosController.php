@@ -49,7 +49,7 @@ class activosController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
-            'trademark' => 'required',
+            'trademark' => 'required|alpha',
             'serial_number' => 'required',            
             'reference' => 'required',            
             'date_admission' => 'required|date',            
