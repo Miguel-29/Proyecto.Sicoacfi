@@ -50,11 +50,11 @@ class activosController extends Controller
     public function store(Request $request) {
         $request->validate([
             'trademark' => 'required|alpha',
-            'serial_number' => 'required',            
+            'serial_number' => 'required|alpha_num',            
             'reference' => 'required',            
             'date_admission' => 'required|date',            
             'maintenance' => 'nullable|date',            
-            'color' => 'required|string',
+            'color' => 'required|alpha',
             'category' => 'required',
             'idenvironment' => 'nullable|numeric',
             'idteacher' => 'nullable|numeric',
@@ -71,12 +71,12 @@ class activosController extends Controller
     }
     public function update(Request $request,$id) {
         $request->validate([
-            'trademark' => 'required',
-            'serial_number' => 'required',            
+            'trademark' => 'required|alpha',
+            'serial_number' => 'required|alpha_num',            
             'reference' => 'required',            
             'date_admission' => 'required|date',            
             'maintenance' => 'nullable|date',            
-            'color' => 'required|string',
+            'color' => 'required|alpha',
             'category' => 'required',
             'idenvironment' => 'nullable|numeric',
             'idteacher' => 'nullable|numeric',

@@ -17,7 +17,7 @@ class ambientesController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
-            'code'=>'required|min:100|numeric',
+            'code'=>'required|min:100|alpha_num',
             'floor'=>'required'
         ]);
         $environment=environment::create($request->all());
@@ -30,7 +30,7 @@ class ambientesController extends Controller
     }
     public function update(Request $request,$id) {
         $request->validate([
-            'code'=>'required|min:100|numeric',
+            'code'=>'required|min:100|alpha_num',
             'floor'=>'required'
         ]);
         $environment= environment::find($id)->update($request->all());

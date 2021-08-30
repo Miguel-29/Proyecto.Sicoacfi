@@ -17,10 +17,10 @@ class ProfesoresController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
-            'name'=>'required|string',
-            'lastnames'=>'required|string',
-            'degree'=>'required|string',
-            'document'=>'required|numeric|min:7'
+            'name'=>'required|alpha',
+            'lastnames'=>'required|alpha',
+            'degree'=>'required|alpha',
+            'document'=>'required|alpha_num|min:7'
         ]);
         $teacher=teacher::create($request->all());
         return redirect()->route('profesores.index')
@@ -32,10 +32,10 @@ class ProfesoresController extends Controller
     }
     public function update(Request $request,$id) {
         $request->validate([
-            'name'=>'required|string',
-            'lastnames'=>'required|string',
-            'degree'=>'required|string',
-            'document'=>'required|numeric|min:7'
+            'name'=>'required|alpha',
+            'lastnames'=>'required|alpha',
+            'degree'=>'required|alpha',
+            'document'=>'required|alpha_num|min:7'
         ]);
         $teacher=teacher::find($id)->update($request->all());
         return redirect()->route('profesores.index')
