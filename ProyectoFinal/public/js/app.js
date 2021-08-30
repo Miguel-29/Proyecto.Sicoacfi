@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
   ocultarSnnipet()
 })
 mostrarSnnipet =() =>{
-  conte.style.display = 'block'  
+  conte.style.display = 'block'
+  console.log("me muestro")  
 }
 ocultarSnnipet =() =>{
   conte.style.display = 'none'
