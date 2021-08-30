@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
   conte = document.getElementById("bg-content");
   document.forms["formDeleteEnvironment"] ? document.forms["formDeleteEnvironment"].submit() : console.log("nada");
   document.forms["formDeleteAsset"] ? document.forms["formDeleteAsset"].submit() : console.log("nada");  
-  elemtA = document.querySelectorAll('a');
+  elemtA = document.querySelectorAll('a:not(.no-snipet)');
   botones = document.querySelectorAll("[type='submit']");
   elemtA.forEach(item => {
     item.addEventListener('click', () => { 
@@ -54,10 +54,4 @@ mostrarSnnipet =() =>{
 }
 ocultarSnnipet =() =>{
   conte.style.display = 'none'
-}
-window.onload = function(){
-}
-function asdasd(){
-  var conte = document.getElementById("bg-content");
-  conte.style.display = 'block'
 }

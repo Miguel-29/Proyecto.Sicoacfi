@@ -14,6 +14,7 @@
         <link rel="shortcut icon" type="image/png" href="{{asset('/images/LogoMakr-1lXjxx.png')}}"/>
         <title>Inicio de sesión</title>
         <link rel="stylesheet" href="{{url('css/app.css')}}" />
+        <link rel="stylesheet" href="{{url('css/style.css')}}" />
     </head>
     <body>
         <div class="container">

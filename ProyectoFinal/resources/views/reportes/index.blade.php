@@ -7,10 +7,10 @@
         <div class="card offset-lg-2 col-lg-8 my-3 text-center">
             <ul class="nav nav-tabs nav-justified fs-5">
                 <li class="nav-item ">
-                    <a class="nav-link active" data-bs-toggle="tab" id="asset-tab" data-bs-target="#asset" type="button" role="tab" aria-controls="asset">Reporte de activos fijos</a>
+                    <a class="nav-link active no-snipet" data-bs-toggle="tab" id="asset-tab" data-bs-target="#asset" type="button" role="tab" aria-controls="asset">Reporte de activos fijos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"data-bs-toggle="tab" id="down-tab" data-bs-target="#down" type="button" role="tab" aria-controls="down">Reporte de activos fijos de baja</a>
+                    <a class="nav-link no-snipet"data-bs-toggle="tab" id="down-tab" data-bs-target="#down" type="button" role="tab" aria-controls="down">Reporte de activos fijos de baja</a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
