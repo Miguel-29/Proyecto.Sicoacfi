@@ -15,6 +15,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">    
     <meta http-equiv="Pragma" content="no-cache">
     <meta name="generator" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
     <link rel="shortcut icon" type="image/png" href="{{asset('/images/LogoMakr-1lXjxx.png')}}"/>
     <!-- Bootstrap core CSS -->
