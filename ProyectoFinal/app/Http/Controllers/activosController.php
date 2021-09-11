@@ -6,6 +6,8 @@ use App\Models\asset;
 use App\Models\environment;
 use App\Models\teacher;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class activosController extends Controller
 {
@@ -108,5 +110,10 @@ class activosController extends Controller
         $asset=asset::find($id)->restore();
         return redirect()->route('activos.index')
         ->with('success', 'Activo fijo restaurado');
+    }
+    public function assetdownload($id){
+        $asset=asset::find($id);
+        $pdf = \PDF::loadView('reportes.activosInfo', compact('asset'));
+        return $pdf->download($asset->trademark.$asset->reference.$asset->serial_number.'.pdf');
     }
 }

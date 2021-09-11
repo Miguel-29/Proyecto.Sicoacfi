@@ -40,6 +40,7 @@
                                 <th>Responsable</th>
                                 <th>Editar</th>
                                 <th>Remover</th>
+                                <th>Descargar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -84,10 +85,15 @@
                                         </a> 
                                     </td>
                                     <td>                                        
-                                        <button  type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}">                                            
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal{{$assets->id}}">                                            
                                             <i class="fas fa-ban"></i>
                                         </button>
                                         @include('component.modal')
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-success no-snipet" href="{{route('activos.download',$assets->id)}}">
+                                            <i class="fas fa-download"></i>
+                                        </a> 
                                     </td>
                                 </tr>
                                 @endforeach

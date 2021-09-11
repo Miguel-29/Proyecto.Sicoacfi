@@ -23,7 +23,6 @@
                             <th>Fecha de ingreso</td>
                             <th>Mantenimiento</th>
                             <th>Restaurar</th>
-                            <th>Eliminar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -44,11 +43,6 @@
                                             <span><i class="fas fa-trash-restore"></i> Actualizar</span>
                                         </button>
                                     </form>                              
-                                </td>
-                                <td>
-                                    <a class="btn btn-danger">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>                                   
                                 </td>
                             </tr>
                         @endforeach

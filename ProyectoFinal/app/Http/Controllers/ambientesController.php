@@ -17,9 +17,10 @@ class ambientesController extends Controller
     }
     public function store(Request $request) {
         $request->validate([
-            'code'=>'required|min:100|alpha_num',
+            'code'=>'required|min:3|alpha_num',
             'floor'=>'required'
         ]);
+        $dd();
         $environment=environment::create($request->all());
         return redirect()->route('aulas.index')
         ->with('success','Aula registrada con exito');
@@ -30,7 +31,7 @@ class ambientesController extends Controller
     }
     public function update(Request $request,$id) {
         $request->validate([
-            'code'=>'required|min:100|alpha_num',
+            'code'=>'required|min:3|alpha_num',
             'floor'=>'required'
         ]);
         $environment= environment::find($id)->update($request->all());

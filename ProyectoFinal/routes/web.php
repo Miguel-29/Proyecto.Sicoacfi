@@ -17,8 +17,6 @@ use App\Http\Controllers\reporteController;
 |
 */
 
-
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('/');
 })->name('dashboard');
@@ -39,6 +37,8 @@ Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::put('activos/environ/{id}',[activosController::class,'updateEnviro'])->name('activos.updateEnviro');
     Route::put('activos/teacher/{id}',[activosController::class,'updateTeacher'])->name('activos.updateTeacher');
     Route::delete('activos/{id}',[activosController::Class,'delete'])->name('activos.delete');
+    
+    Route::get('activos/reportes/{id}',[activosController::class,'assetdownload'])->name('activos.download');
     
     Route::get('activos/bajas',[activosController::class,'indexBajas'])->name('bajasActivos.index');
     Route::get('activos/restaurar/{id}',[activosController::class,'restoreAsset'])->name('bajasActivos.restore');
