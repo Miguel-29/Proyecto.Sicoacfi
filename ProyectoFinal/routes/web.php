@@ -21,7 +21,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('/');
 })->name('dashboard');
 
-// Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
+Route::middleware(['my_auth', 'auth:sanctum', 'verified'])->group( function () {
     Route::get('/', function () {
         return view('index');
     })->name('home');
@@ -64,7 +64,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     Route::get('reportes',[reporteController::class,'index'])->name('reportes.index');
     Route::get('reportes/activos',[reporteController::class,'download'])->name('reportes.descarga');
     Route::get('reportes/bajas',[reporteController::class,'downloadDown'])->name('reportesbajas.descarga');
-// });
+});
 
 
 
