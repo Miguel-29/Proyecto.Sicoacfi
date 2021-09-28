@@ -20,7 +20,6 @@ class ambientesController extends Controller
             'code'=>'required|min:3|alpha_num',
             'floor'=>'required'
         ]);
-        $dd();
         $environment=environment::create($request->all());
         return redirect()->route('aulas.index')
         ->with('success','Aula registrada con exito');
