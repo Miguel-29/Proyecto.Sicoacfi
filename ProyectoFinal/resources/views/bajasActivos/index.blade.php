@@ -22,7 +22,6 @@
                             <th>Categoria</th>
                             <th>Fecha de ingreso</td>
                             <th>Mantenimiento</th>
-                            <th>Restaurar</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,15 +34,6 @@
                                 <td>{{$activo->category}}</td>
                                 <td>{{$activo->date_admission}}</td>
                                 <td>{{$activo->maintenance}}</td>
-                                <td>
-                                    <form action="{{route('bajasActivos.restore',$activo->id)}}" method="post">
-                                        @method('PUT')
-                                        @csrf
-                                        <button type="submit" class="btn btn-success">
-                                            <span><i class="fas fa-trash-restore"></i> Actualizar</span>
-                                        </button>
-                                    </form>                              
-                                </td>
                             </tr>
                         @endforeach
                         </tbody>
